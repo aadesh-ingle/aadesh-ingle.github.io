@@ -25,7 +25,7 @@ organizations:
     url: https://www.iiit.ac.in/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests include machine learning, explainable artificial intelligence(XAI) and natural language processing.
 
 # Interests to show in About widget
 interests:
@@ -102,16 +102,16 @@ social:
     link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
   - icon: github
     icon_pack: fab
-    link: https://github.com/neo-9981
+    link: https://github.com/aadesh-ingle
   - icon: linkedin
     icon_pack: fab
-    link: https://www.linkedin.com/aadesh-ingle
+    link: https://www.linkedin.com/in/aadesh-ingle/
   # Link to a PDF of your resume/CV.
   # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
   # and uncomment the lines below.
   - icon: cv
     icon_pack: ai
-    link: uploads/resume.pdf
+    link: uploads/Aadesh_Ingle_Resume.pdf
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
