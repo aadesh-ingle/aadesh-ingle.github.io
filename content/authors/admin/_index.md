@@ -17,7 +17,7 @@ status:
 superuser: true
 
 # Role/position/tagline
-role: Student at IIIT  Hyderabad
+role: Grad student at IIIT Hyderabad
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -37,7 +37,7 @@ interests:
 education:
   courses:
     - course: MTech in Computer Science & Information Technology
-      institution: IIIT Hyderabad
+      institution: International Institute of Information Technology, Hyderabad
       year: 2024
     - course: BTech in Information Technology
       institution: Vishwakarma Institute of Information Technology, Pune
