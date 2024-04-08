@@ -1,5 +1,5 @@
 ---
-title: Blog with Jupyter Notebooks!
+title: Blog with aadesh!
 date: '2023-11-04'
 summary: Easily blog from Jupyter notebooks!
 ---
