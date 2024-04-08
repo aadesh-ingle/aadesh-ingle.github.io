@@ -39,26 +39,26 @@ The cycle of life often follows a well-trodden path – we grow up, pursue educa
 
 ## The Call to Reignite Your Dreams
 
-> Don’t push me hard;<br>  
-> I will fall off cliff.<br>  
-> The stones at the base<br>  
-> Will rip my skip apart,<br>  
-> And the vultures will wait<br>  
-> To see me die.<br>  
-> And I will never reach<br>  
-> The other end that is far away.<br>  
-> I beg you...<br>  
-> <br>  
-> Don’t worry, O darling.<br>  
-> Then came a voice,<br>  
-> Drifting through the skies,<br>  
-> Finding its way to my soul.<br>  
-> "I have got your back,"<br>  
-> And of everyone<br>  
-> Who dare<br>  
-> Dare to dream.<br>  
-> Just think, O darling,<br>  
-> "What if you could fly?"<br>
+> Don’t push me hard;  
+> I will fall off cliff.  
+> The stones at the base  
+> Will rip my skip apart,  
+> And the vultures will wait  
+> To see me die.  
+> And I will never reach  
+> The other end that is far away.  
+> I beg you...  
+>   
+> Don’t worry, O darling.  
+> Then came a voice,  
+> Drifting through the skies,  
+> Finding its way to my soul.  
+> "I have got your back,"  
+> And of everyone  
+> Who dare  
+> Dare to dream.  
+> Just think, O darling,  
+> "What if you could fly?"
 
 
 The poetic verses serve as a rallying cry, urging us to reignite the flames of our dreams, no matter how daunting the path may seem. For those who dare to dream, a guiding voice reassures us that we have the strength to soar, to break free from the constraints that have held us back.
