@@ -36,7 +36,7 @@ interests:
 # Education to show in About widget
 education:
   courses:
-    - course: MTech in Computer Science & Information Technology
+    - course: MTech in Computer Science & Information Security
       institution: International Institute of Information Technology, Hyderabad
       year: 2024
     - course: BTech in Information Technology
