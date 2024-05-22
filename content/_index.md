@@ -62,12 +62,12 @@ sections:
       #   Leave `date_end` empty if it's your current employer.
       #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
       items:
-        - title: CEO
-          company: GenCoin
-          company_url: ''
+        - title: Machine Learning Engineer
+          company: TailoredAI
+          company_url: 'https://www.tailoredai.co/'
           company_logo: org-gc
-          location: California
-          date_start: '2021-01-01'
+          location: Bangalore
+          date_start: '2024-02-01'
           date_end: ''
           description: |2-
               Responsibilities include:
@@ -75,14 +75,50 @@ sections:
               * Analysing
               * Modelling
               * Deploying
-        - title: Professor of Semiconductor Physics
-          company: University X
-          company_url: ''
+        - title: Independent Research
+          company: LTRC Lab, IIIT Hyderabad
+          company_url: 'https://ltrc.iiit.ac.in/'
           company_logo: org-x
-          location: California
-          date_start: '2016-01-01'
-          date_end: '2020-12-31'
-          description: Taught electronic engineering and researched semiconductor physics.
+          location: Hyderabad
+          date_start: '2024-01-01'
+          date_end: '2024-05-31'
+          description: Exploring a novel framework for evaluating LLM’s explanation/interpretation abilities.
+        - title: Summer Research Intern
+          company: MT-NLP Lab, IIIT Hyderabad
+          company_url: 'https://ltrc.iiit.ac.in/'
+          company_logo: org-x
+          location: Hyderabad
+          date_start: '2023-06-01'
+          date_end: '2023-07-31'
+          description: Worked on a multilingual QA system for Indic Languages.
+        - title: Software Engineer
+          company: Apisero Inc.
+          company_url: 'https://www.linkedin.com/company/apisero/'
+          company_logo: org-x
+          location: Pune
+          date_start: '2021-03-01'
+          date_end: '2021-06-31'
+          description: |2-
+              Responsibilities include:
+              
+              * RESTful web APIs
+              * API development life cycle
+              * API‑led connectivity approach
+        - title: Project Intern
+          company: GODREJ & BOYCE MFG. CO. LTD.
+          company_url: 'https://www.linkedin.com/company/godrej/?originalSubdomain=in'
+          company_logo: org-x
+          location: Pune
+          date_start: '2019-05-01'
+          date_end: '2019-07-31'
+          description: |2-
+              Responsibilities include:
+              
+              * Parametric analysis on mathematical models.
+              * Vibration analysis and modelling for FATL washing
+machines and HydroDynamic Balancers.
+
+
     design:
       columns: '2'
   - block: accomplishments
