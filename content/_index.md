@@ -115,9 +115,7 @@ sections:
               Responsibilities include:
               
               * Parametric analysis on mathematical models.
-              * Vibration analysis and modelling for FATL washing
-machines and HydroDynamic Balancers.
-
+              * Vibration analysis and modelling for FATL washing machines and HydroDynamic Balancers.
 
     design:
       columns: '2'
