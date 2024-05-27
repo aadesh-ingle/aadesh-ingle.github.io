@@ -112,7 +112,7 @@ social:
   - icon: cv
     icon_pack: ai
     link: uploads/Aadesh_Ingle_Resume.pdf
-  - icon: Goodreads_1
+  - icon: goodreads
     icon_pack: custom
     link: https://www.goodreads.com/user/show/20492208-aadesh-ingle
 
