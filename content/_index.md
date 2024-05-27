@@ -83,27 +83,27 @@ sections:
           date_start: '2024-01-01'
           date_end: '2024-05-31'
           description: Exploring a novel framework for evaluating LLM’s explanation/interpretation abilities.
-        # - title: Summer Research Intern
-        #   company: MT-NLP Lab, IIIT Hyderabad
-        #   company_url: 'https://ltrc.iiit.ac.in/'
-        #   company_logo: org-x
-        #   location: Hyderabad
-        #   date_start: '2023-06-01'
-        #   date_end: '2023-07-31'
-        #   description: Worked on a multilingual QA system for Indic Languages.
-        # - title: Software Engineer
-        #   company: Apisero Inc.
-        #   company_url: 'https://www.linkedin.com/company/apisero/'
-        #   company_logo: org-x
-        #   location: Pune
-        #   date_start: '2021-03-01'
-        #   date_end: '2021-06-31'
-        #   description: |2-
-        #       Responsibilities include:
+        - title: Summer Research Intern
+          company: MT-NLP Lab, IIIT Hyderabad
+          company_url: 'https://ltrc.iiit.ac.in/'
+          company_logo: org-x
+          location: Hyderabad
+          date_start: '2023-06-01'
+          date_end: '2023-07-31'
+          description: Worked on a multilingual QA system for Indic Languages.
+        - title: Software Engineer
+          company: Apisero Inc.
+          company_url: 'https://www.linkedin.com/company/apisero/'
+          company_logo: org-x
+          location: Pune
+          date_start: '2021-03-01'
+          date_end: '2021-06-31'
+          description: |2-
+              Responsibilities include:
               
-        #       * RESTful web APIs
-        #       * API development life cycle
-        #       * API‑led connectivity approach
+              * RESTful web APIs
+              * API development life cycle
+              * API‑led connectivity approach
         # - title: Project Intern
         #   company: GODREJ & BOYCE MFG. CO. LTD.
         #   company_url: 'https://www.linkedin.com/company/godrej/?originalSubdomain=in'
