@@ -113,7 +113,7 @@ social:
     icon_pack: ai
     link: uploads/Aadesh_Ingle_Resume.pdf
   - icon: goodreads
-    icon_pack: custom
+    # icon_pack: custom
     link: https://www.goodreads.com/user/show/20492208-aadesh-ingle
 
 # Highlight the author in author lists? (true/false)
