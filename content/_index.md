@@ -97,7 +97,7 @@ sections:
           company_logo: org-x
           location: Pune
           date_start: '2021-03-01'
-          date_end: '2021-06-31'
+          date_end: '2021-06-30'
           description: |2-
               Responsibilities include:
               
