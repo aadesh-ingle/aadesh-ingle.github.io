@@ -112,6 +112,8 @@ social:
   - icon: cv
     icon_pack: ai
     link: uploads/Aadesh_Ingle_Resume.pdf
+  - icon: goodreads
+    link: https://www.goodreads.com/user/show/20492208-aadesh-ingle
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true

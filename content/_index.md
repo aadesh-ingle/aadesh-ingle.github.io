@@ -75,14 +75,14 @@ sections:
               * Analysing
               * Modelling
               * Deploying
-        # - title: Independent Research
-        #   company: LTRC Lab, IIIT Hyderabad
-        #   company_url: 'https://ltrc.iiit.ac.in/'
-        #   company_logo: org-x
-        #   location: Hyderabad
-        #   date_start: '2024-01-01'
-        #   date_end: '2024-05-31'
-        #   description: Exploring a novel framework for evaluating LLM’s explanation/interpretation abilities.
+        - title: Independent Research
+          company: LTRC Lab, IIIT Hyderabad
+          company_url: 'https://ltrc.iiit.ac.in/'
+          company_logo: org-x
+          location: Hyderabad
+          date_start: '2024-01-01'
+          date_end: '2024-05-31'
+          description: Exploring a novel framework for evaluating LLM’s explanation/interpretation abilities.
         # - title: Summer Research Intern
         #   company: MT-NLP Lab, IIIT Hyderabad
         #   company_url: 'https://ltrc.iiit.ac.in/'
