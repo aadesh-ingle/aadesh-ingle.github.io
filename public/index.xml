@@ -2,9 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>My New Hugo Site</title>
-    <link>http://localhost:64609/</link>
+    <link>http://localhost:49498/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://localhost:64609/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Oct 2024 19:05:32 +0530</lastBuildDate><atom:link href="http://localhost:49498/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First</title>
+      <link>http://localhost:49498/posts/first/</link>
+      <pubDate>Sun, 27 Oct 2024 19:05:32 +0530</pubDate>
+      
+      <guid>http://localhost:49498/posts/first/</guid>
+      <description>&lt;h1 id=&#34;this-is-heading-one&#34;&gt;This is heading one.&lt;/h1&gt;
+&lt;h2 id=&#34;this-is-heading-two&#34;&gt;This is heading two.&lt;/h2&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;</description>
+      <content:encoded><![CDATA[<h1 id="this-is-heading-one">This is heading one.</h1>
+<h2 id="this-is-heading-two">This is heading two.</h2>
+<p>This is a paragraph.</p>
+]]></content:encoded>
+    </item>
+    
   </channel>
 </rss>
