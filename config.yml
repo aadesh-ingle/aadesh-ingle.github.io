@@ -147,30 +147,6 @@ languages:
           params:
             external: true
 
-  zh:
-    languageName: ":cn:"
-    languageAltTitle: Chinese
-    weight: 2
-    title: PaperModX
-    menu:
-      main:
-        - name: Docs
-          url: docs
-          weight: 1
-        - name: Tags
-          url: tags/
-          weight: 4
-        - name: Archive
-          url: archives
-          weight: 5
-        - name: Search
-          url: search/
-          weight: 10
-        - name: "@Author"
-          url: "https://reorx.com"
-          params:
-            external: true
-
 outputs:
   home:
     - HTML

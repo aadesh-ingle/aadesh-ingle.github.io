@@ -147,45 +147,6 @@ languages:
           params:
             external: true
 
-  zh:
-    languageName: ":cn:"
-    languageAltTitle: 中文
-    weight: 2
-    title: PaperModX
-    profileMode:
-      enabled: true
-      title: PaperModX
-      # imageUrl: "#"
-      # imageTitle: my image
-      # imageWidth: 120
-      # imageHeight: 120
-      subtitle: >
-        <p>Hugo 主题</p>
-        ☄️ 快速 | ☁️ 流畅 | 📖 可读性 | 📱 响应式
-      buttons:
-        - name: 文档
-          url: docs
-        - name: 标签
-          url: tags
-    menu:
-      main:
-        - name: 文档
-          url: docs
-          weight: 1
-        - name: 标签
-          url: tags/
-          weight: 4
-        - name: 归档
-          url: archives
-          weight: 5
-        - name: 搜索
-          url: search/
-          weight: 10
-        - name: "@作者"
-          url: "https://reorx.com"
-          params:
-            external: true
-
 outputs:
   home:
     - HTML
