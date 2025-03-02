@@ -1,0 +1,71 @@
+.social-icons {
+  display: flex;
+  gap: 20px;
+  margin: 30px 0;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  transform: translateY(-5px);
+  text-decoration: none;
+}
+
+.social-icons i, .social-icons svg {
+  font-size: 28px;
+  color: #fff;
+}
+
+/* Custom colors for specific platforms */
+.social-icons a.linkedin:hover {
+  background-color: #0077b5;
+}
+
+.social-icons a.github:hover {
+  background-color: #333;
+}
+
+.social-icons a.scholar:hover {
+  background-color: #4285f4;
+}
+
+.social-icons a.instagram:hover {
+  background-color: #e4405f;
+}
+
+.social-icons a.googlescholar:hover {
+  background-color: #4285f4;
+}
+
+.social-icons a.gmail:hover {
+  background-color: #EA4335;
+}
+
+.social-icons a.goodreads:hover {
+  background-color: #553b08;
+}
+
+.social-icons a.twitter:hover {
+  background-color: #1DA1F2;
+}
+
+.social-icons a.resume:hover {
+  background-color: #2e8b57; /* Sea green color for resume */
+}
+
+/* Ensure all social icon hover states have white text */
+.social-icons a:hover svg {
+  color: #fff;
+}

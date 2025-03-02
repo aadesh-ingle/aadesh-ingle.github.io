@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Blog on The Thinking Path</title><link>https://example.com/blog/</link><description>Recent content in Blog on The Thinking Path</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><managingEditor> adeshingle@gmail.com (Aadesh Ingle)</managingEditor><webMaster> adeshingle@gmail.com (Aadesh Ingle)</webMaster><copyright>Aadesh Ingle</copyright><lastBuildDate>Mon, 03 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/blog/index.xml" rel="self" type="application/rss+xml"/><item><title>Faster Inference is All You Need!</title><link>https://example.com/blog/faster-inference-is-all-you-need/</link><pubDate>Mon, 03 Feb 2025 00:00:00 +0000</pubDate><author> adeshingle@gmail.com (Aadesh Ingle)</author><guid>https://example.com/blog/faster-inference-is-all-you-need/</guid><description>&lt;h3 id="leading-players-in-the-market">Leading players in the market:&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;a href="https://sambanova.ai/">https://sambanova.ai/&lt;/a>&lt;br>
+&lt;a href="https://www.graphcore.ai/">https://www.graphcore.ai/&lt;/a>&lt;br>
+&lt;a href="https://groq.com/">https://groq.com/&lt;/a>&lt;br>
+&lt;a href="https://cerebras.ai/">https://cerebras.ai/&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;ul>
+&lt;li>General purpose GPUs quite often struggle with the sequential nature of LLMs.&lt;/li>
+&lt;li>GPUs, with architectures prioritizing parallel processing, are ideal for handling numerous graphical computations simultaneously. However, LLMs operate differently—relying on sequential processing of language data. This mismatch between hardware and task creates inefficiencies, resulting in slower inference speeds and hindering real-time capabilities.&lt;/li>
+&lt;li>That’s when LPUs came into the picture, created by Jonathon Ross of Groq.
+&lt;ul>
+&lt;li>LPUs double down on the sequential processing nature of natural languages.&lt;/li>
+&lt;li>They have on-chip high bandwidth SRAM memory, which minimizes data flow and reduces latency.&lt;/li>
+&lt;li>You can customize specific components of the LPU chip depending on the model architecture type (MoE, sparsified attention, multi-node inference).&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>The Groq approach is wide, slow, and low power—making up for it in parallel across many units with lots of local &lt;strong>SRAM&lt;/strong> &lt;strong>memory&lt;/strong> next to the compute—while the Nvidia approach is faster on the matrix math and much faster on the &lt;strong>main memory&lt;/strong> that is stacked up and running in parallel.&lt;/li>
+&lt;li>Groq, as far as I understand, is hardware made for AI that uses super fast, expensive memory (SRAM, the same kind used in the L3 cache of CPUs), and each Groq chip has only a tiny amount of memory compared to GPUs; they split the model across many chips.&lt;/li>
+&lt;li>Cerebras makes CPUs with ~1 million cores, and they&amp;rsquo;re inferring on that instead of GPUs. It’s an entirely different architecture, meaning no network is involved—possibly leveraging CPU caches instead.&lt;/li>
+&lt;/ul>
+&lt;blockquote>
+&lt;p>Groq’s chip has a fully deterministic VLIW (Very Long Instruction Word) architecture, with no buffers, and it reaches ~725mm² die size on Global Foundries’ 14nm process node. It has no external memory, keeping weights, KVCache, activations, etc., all on-chip during processing. Because each chip only has 230MB of SRAM, no useful models can actually fit on a single chip. Instead, many chips must be utilized and networked together.&lt;/p></description><content:encoded><![CDATA[<h3 id="leading-players-in-the-market">Leading players in the market:</h3>
+<blockquote>
+<p><a href="https://sambanova.ai/">https://sambanova.ai/</a><br>
+<a href="https://www.graphcore.ai/">https://www.graphcore.ai/</a><br>
+<a href="https://groq.com/">https://groq.com/</a><br>
+<a href="https://cerebras.ai/">https://cerebras.ai/</a></p></blockquote>
+<ul>
+<li>General purpose GPUs quite often struggle with the sequential nature of LLMs.</li>
+<li>GPUs, with architectures prioritizing parallel processing, are ideal for handling numerous graphical computations simultaneously. However, LLMs operate differently—relying on sequential processing of language data. This mismatch between hardware and task creates inefficiencies, resulting in slower inference speeds and hindering real-time capabilities.</li>
+<li>That’s when LPUs came into the picture, created by Jonathon Ross of Groq.
+<ul>
+<li>LPUs double down on the sequential processing nature of natural languages.</li>
+<li>They have on-chip high bandwidth SRAM memory, which minimizes data flow and reduces latency.</li>
+<li>You can customize specific components of the LPU chip depending on the model architecture type (MoE, sparsified attention, multi-node inference).</li>
+</ul>
+</li>
+<li>The Groq approach is wide, slow, and low power—making up for it in parallel across many units with lots of local <strong>SRAM</strong> <strong>memory</strong> next to the compute—while the Nvidia approach is faster on the matrix math and much faster on the <strong>main memory</strong> that is stacked up and running in parallel.</li>
+<li>Groq, as far as I understand, is hardware made for AI that uses super fast, expensive memory (SRAM, the same kind used in the L3 cache of CPUs), and each Groq chip has only a tiny amount of memory compared to GPUs; they split the model across many chips.</li>
+<li>Cerebras makes CPUs with ~1 million cores, and they&rsquo;re inferring on that instead of GPUs. It’s an entirely different architecture, meaning no network is involved—possibly leveraging CPU caches instead.</li>
+</ul>
+<blockquote>
+<p>Groq’s chip has a fully deterministic VLIW (Very Long Instruction Word) architecture, with no buffers, and it reaches ~725mm² die size on Global Foundries’ 14nm process node. It has no external memory, keeping weights, KVCache, activations, etc., all on-chip during processing. Because each chip only has 230MB of SRAM, no useful models can actually fit on a single chip. Instead, many chips must be utilized and networked together.</p></blockquote>
+<ul>
+<li>The LPU chip is designed to be fully predictable, unlike GPUs with their complex caches and memory systems. With a simple, in-order architecture, the LPU allows compiler software to schedule operations precisely—down to the nanosecond and clock cycle.</li>
+<li>The LPU has direct access to on-chip memory, providing a high bandwidth of up to 80TB/s. Instead of using multi-level caches, it relies on SRAM to simplify data movement and ensure high bandwidth for compute units.</li>
+</ul>
+<p><strong>General Techniques:</strong></p>
+<ul>
+<li>Optimized inference engines allow for trade-offs around latency, throughput, and cost, helping to maximize value from hardware.</li>
+<li>Adjusting batch sizes can fine-tune performance. Smaller batch sizes provide lower-latency responses, while larger batch sizes sacrifice some latency for increased throughput.</li>
+<li>Groq LPUs deliver higher throughput, lower latency, and lower cost for LLM inference than Nvidia GPUs—similarly, Cerebras WFE Chips offer their own advantages.</li>
+</ul>
+<hr>
+<h3 id="lpus">LPUs</h3>
+<ul>
+<li>The LPU is packed with thousands of identical processing elements (PEs). These PEs are arranged in SIMD (Single Instruction, Multiple Data) arrays, meaning they can execute the same instruction on different data points simultaneously.</li>
+<li>The CU (Centralised Control Unit) is the mastermind behind the LPU&rsquo;s operations. It issues instructions to the PEs and manages the flow of data and commands, much like a conductor ensuring an orchestra runs smoothly.</li>
+<li>The LPU has a well-designed memory structure that includes large on-chip SRAM and high-bandwidth off-chip memory (HBM). This setup is optimized for quick data access with minimal delays.</li>
+<li>The NoC (Network-on-Chip) is the high-speed highway connecting the PEs, CU, and memory components. It ensures that data and instructions move quickly and efficiently.</li>
+<li>The LPU supports vector processing, allowing it to perform multiple operations on large datasets simultaneously—a critical feature for complex mathematical computations.</li>
+</ul>
+<h3 id="how-it-all-comes-together">How It All Comes Together?</h3>
+<ul>
+<li>When data is fed into the LPU, the CU kicks into action by issuing instructions to the PEs.</li>
+<li>The PEs, working in SIMD arrays, execute the same instruction on different data points concurrently, resulting in massive parallel processing essential for large-scale computations.</li>
+<li>The LPU&rsquo;s memory hierarchy ensures rapid data access, keeping the PEs constantly fed with the data they need.</li>
+<li>The CU coordinates thousands of operations in a single clock cycle, ensuring smooth data flow and high performance.</li>
+<li>The NoC facilitates quick movement of data and instructions between the PEs, CU, and memory.</li>
+<li>The PEs are equipped with Arithmetic Logic Units, Vector Units, and Scalar Units, allowing them to perform a wide range of operations on large datasets simultaneously.</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><strong>GPUs vs LPUs</strong></p>
+<h3 id="1-architecture-design"><strong>1. Architecture Design</strong></h3>
+<p><strong>Groq LPU:</strong></p>
+<ul>
+<li><strong>Single Instruction, Multiple Data (SIMD):</strong> The LPU operates on a SIMD architecture, allowing thousands of PEs to execute the same instruction on different data points simultaneously. This design is specifically optimized for tensor operations, which are fundamental in AI and machine learning tasks.</li>
+<li><strong>Centralized Control Unit:</strong> The LPU features a centralized control unit that manages instruction scheduling and data flow, ensuring efficient resource utilization. This enables deterministic behavior, with execution order that minimizes latency.</li>
+<li><strong>On-Chip Memory:</strong> Groq&rsquo;s LPU integrates significant on-chip SRAM, providing high bandwidth (up to 80TB/s) and low-latency access to data. This reduces reliance on slower external memory accesses.</li>
+</ul>
+<p><strong>Traditional GPU:</strong></p>
+<ul>
+<li><strong>Massively Parallel Architecture:</strong> GPUs are built with many smaller cores designed for parallel processing. They excel at handling multiple tasks simultaneously but rely on complex memory hierarchies and caching mechanisms to manage data flow.</li>
+<li><strong>Distributed Control:</strong> GPUs typically use distributed control mechanisms with multiple levels of caches (L1, L2), which can introduce non-deterministic execution due to cache misses and memory contention.</li>
+<li><strong>External Memory Dependency:</strong> While GPUs may have high off-chip memory bandwidth (e.g., GDDR6 or HBM), they depend heavily on external memory for data storage, leading to potential latency increases during data transfers.</li>
+</ul>
+<h2 id="2-performance-optimisation"><strong>2. Performance Optimisation</strong></h2>
+<p><strong>Groq LPU:</strong></p>
+<ul>
+<li><strong>Deterministic Execution:</strong> The deterministic nature of the LPU allows for precise scheduling of operations down to the nanosecond—a crucial factor for low-latency applications like LLM inference.</li>
+<li><strong>Optimised Data Reuse:</strong> Its architecture maximizes data reuse within on-chip memory, reducing energy consumption and enhancing performance by minimizing memory accesses.</li>
+<li><strong>Pipelining and Vector Processing:</strong> The LPU employs pipelining techniques to process multiple operations concurrently at different execution stages. Each PE supports vector processing, enabling efficient handling of tensor operations.</li>
+</ul>
+<p><strong>Traditional GPU:</strong></p>
+<ul>
+<li><strong>Advanced Caching Mechanisms:</strong> GPUs utilize sophisticated caching strategies to improve performance; however, these can introduce latency due to cache misses and require careful management of memory access patterns.</li>
+<li><strong>Specialised Cores:</strong> Modern GPUs often include specialized cores (e.g., NVIDIA&rsquo;s Tensor Cores) optimized for specific tasks like mixed precision calculations. While beneficial for certain workloads, this adds architectural complexity.</li>
+<li><strong>Dynamic Resource Management:</strong> GPUs dynamically allocate resources based on workload demands, which can lead to inefficiencies if not managed optimally.</li>
+</ul>
+<h2 id="3-energy-efficiency"><strong>3. Energy Efficiency</strong></h2>
+<p><strong>Groq LPU:</strong></p>
+<ul>
+<li><strong>Higher Energy Efficiency:</strong> Groq claims its LPU delivers up to 10x better energy efficiency (in joules per token) compared to traditional GPUs. This is achieved through a simplified architecture and reduced reliance on external memory.</li>
+</ul>
+<p><strong>Traditional GPU:</strong></p>
+<ul>
+<li><strong>Power Consumption Challenges:</strong> Although powerful, GPUs’ complex architectures and dependence on high-bandwidth external memory can lead to higher power consumption—especially significant in large-scale AI applications where energy costs matter.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="conclusion">Conclusion</h3>
+<p>In a landscape where rapid inference and energy efficiency are critical, the evolution from traditional GPUs to specialized LPUs marks a significant shift for AI and machine learning. With deterministic architectures, optimized memory hierarchies, and tailored control units, LPUs offer promising improvements for LLM inference. As the industry pushes the boundaries of performance, innovations like these may redefine real-time AI processing, unlocking unprecedented levels of efficiency and scalability.</p>
+<hr>
+]]></content:encoded></item></channel></rss>
