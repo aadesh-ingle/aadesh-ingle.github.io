@@ -41,24 +41,88 @@
     <!-- Resource hints for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://giscus.app" />
     <link rel="dns-prefetch" href="https://cdn-icons-png.flaticon.com" />
     <link rel="dns-prefetch" href="https://lovable.dev" />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
     <!-- Preload critical resources -->
     <link rel="preload" href="data:application/octet-stream;base64,aW1wb3J0IHsgY3JlYXRlUm9vdCB9IGZyb20gJ3JlYWN0LWRvbS9jbGllbnQnCmltcG9ydCBBcHAgZnJvbSAnLi9BcHAudHN4JwppbXBvcnQgJy4vaW5kZXguY3NzJwoKY3JlYXRlUm9vdChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgicm9vdCIpISkucmVuZGVyKDxBcHAgLz4pOwo=" as="script" />
+    <link rel="preload" href="/profile.jpg" as="image" type="image/jpeg" />
     <link
       rel="preload"
       as="image"
       href="/img/own-your-got-damn-failures.webp"
+      type="image/webp"
     />
-    <script type="module" crossorigin src="/assets/index-31Wc7Kv7.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/vendor-B8IpAplk.js">
-    <link rel="modulepreload" crossorigin href="/assets/router-C_hYjOx7.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-DCqbUMS2.css">
+
+    <!-- Critical CSS inline for immediate rendering -->
+    <style>
+      /* Critical styles for above-the-fold content */
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        margin: 0;
+      }
+      #root {
+        min-height: 100vh;
+      }
+      .hero-section {
+        padding-top: 8rem;
+        min-height: 60vh;
+      }
+      .profile-img {
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        -o-object-fit: cover;
+           object-fit: cover;
+      }
+      .typing-container {
+        min-height: 2.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+
+    <!-- Font display optimization -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    /></noscript>
+    <script type="module" crossorigin src="/assets/index-B-wh3UO9.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-DhKPbr_R.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-DXNXpt-m.js">
+    <link rel="modulepreload" crossorigin href="/assets/utils-CyKCnRV3.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-DpR5kG6X.js">
+    <link rel="modulepreload" crossorigin href="/assets/router-ChwZGuqU.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-ChTEmBaJ.css">
   </head>
 
   <body>
     <div id="root"></div>
+    <!-- Service Worker Registration -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((registration) => {
+              console.log("SW registered: ", registration);
+            })
+            .catch((registrationError) => {
+              console.log("SW registration failed: ", registrationError);
+            });
+        });
+      }
+    </script>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
     <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
   </body>
