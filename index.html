@@ -31,30 +31,14 @@
       content="https://lovable.dev/opengraph-image-p98pqg.png"
     />
 
-    <!-- Favicon: universe icon from Flaticon -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://cdn-icons-png.flaticon.com/512/8152/8152888.png"
-    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!-- Resource hints for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://giscus.app" />
-    <link rel="dns-prefetch" href="https://cdn-icons-png.flaticon.com" />
-    <link rel="dns-prefetch" href="https://lovable.dev" />
-    <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="data:application/octet-stream;base64,aW1wb3J0IHsgY3JlYXRlUm9vdCB9IGZyb20gJ3JlYWN0LWRvbS9jbGllbnQnCmltcG9ydCBBcHAgZnJvbSAnLi9BcHAudHN4JwppbXBvcnQgJy4vaW5kZXguY3NzJwoKY3JlYXRlUm9vdChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgicm9vdCIpISkucmVuZGVyKDxBcHAgLz4pOwo=" as="script" />
-    <link rel="preload" href="/profile.jpg" as="image" type="image/jpeg" />
-    <link
-      rel="preload"
-      as="image"
-      href="/img/own-your-got-damn-failures.webp"
-      type="image/webp"
-    />
+    <link rel="preload" href="/profile.webp" as="image" type="image/webp" />
 
     <!-- Critical CSS inline for immediate rendering -->
     <style>
@@ -88,42 +72,30 @@
     <!-- Font display optimization -->
     <link
       rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Outfit:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript
       ><link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700&family=Outfit:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     /></noscript>
-    <script type="module" crossorigin src="/assets/index-BXDIiWAE.js"></script>
+    <script type="module" crossorigin src="/assets/index-B2vN-EMJ.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-DhKPbr_R.js">
-    <link rel="modulepreload" crossorigin href="/assets/ui-DXNXpt-m.js">
-    <link rel="modulepreload" crossorigin href="/assets/utils-CyKCnRV3.js">
-    <link rel="modulepreload" crossorigin href="/assets/icons-CNBsp0JJ.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-CS8WZuDf.js">
     <link rel="modulepreload" crossorigin href="/assets/router-ChwZGuqU.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-CUd8yxCn.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-L8H4bJI7.css">
   </head>
 
   <body>
     <div id="root"></div>
-    <!-- Service Worker Registration -->
     <script>
       if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("/sw.js")
-            .then((registration) => {
-              console.log("SW registered: ", registration);
-            })
-            .catch((registrationError) => {
-              console.log("SW registration failed: ", registrationError);
-            });
-        });
+        navigator.serviceWorker
+          .getRegistrations()
+          .then((registrations) => registrations.forEach((registration) => registration.unregister()));
       }
     </script>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
   </body>
 </html>

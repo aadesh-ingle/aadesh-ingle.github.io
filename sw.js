@@ -1,27 +1,25 @@
-const CACHE_NAME = "aadesh-blog-v1";
-const urlsToCache = [
-  "/",
-  "/src/main.tsx",
-  "/src/index.css",
-  "/profile.jpg",
-  "/img/own-your-got-damn-failures.webp",
-  "/img/neural-networks.webp",
-  "/img/designing-ethical-ai-systems.webp",
-  "/img/future-of-nlp.webp",
-  "/img/optimizing-deep-learning-models.webp",
-];
+const CACHE_PREFIX = "aadesh-blog";
 
 self.addEventListener("install", (event) => {
+  event.waitUntil(self.skipWaiting());
+});
+
+self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache))
+    caches
+      .keys()
+      .then((cacheNames) =>
+        Promise.all(
+          cacheNames
+            .filter((cacheName) => cacheName.startsWith(CACHE_PREFIX))
+            .map((cacheName) => caches.delete(cacheName))
+        )
+      )
+      .then(() => self.registration.unregister())
+      .then(() => self.clients.claim())
   );
 });
 
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      // Return cached version or fetch from network
-      return response || fetch(event.request);
-    })
-  );
+self.addEventListener("fetch", () => {
+  return;
 });
