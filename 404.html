@@ -69,20 +69,22 @@
     <!-- Fonts are self-hosted via @fontsource-variable (bundled in Vite build).
          No external font requests — zero CDN roundtrips, zero FOUT. -->
 
-    <script type="module" crossorigin src="/assets/index-B1rMuiLl.js"></script>
+    <script type="module" crossorigin src="/assets/index-BLB9KR1T.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-AHO760RB.js">
     <link rel="modulepreload" crossorigin href="/assets/ui-C59jMHDj.js">
     <link rel="modulepreload" crossorigin href="/assets/router-Cnl0MMtu.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-DxOW8bT1.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-B0IZyz2X.css">
   </head>
 
   <body>
     <div id="root"></div>
     <script>
       if ("serviceWorker" in navigator) {
-        navigator.serviceWorker
-          .getRegistrations()
-          .then((registrations) => registrations.forEach((registration) => registration.unregister()));
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js").catch(() => {
+            // The site must keep working if service workers are unavailable.
+          });
+        });
       }
     </script>
   </body>
