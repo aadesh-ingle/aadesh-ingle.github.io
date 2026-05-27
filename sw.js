@@ -1,5 +1,6 @@
 const CACHE_PREFIX = "aadesh-blog";
-const CACHE_VERSION = "v2";
+const CACHE_VERSION = "v3";
+const DOCUMENT_CACHE = `${CACHE_PREFIX}-documents-${CACHE_VERSION}`;
 const IMAGE_CACHE = `${CACHE_PREFIX}-images-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}-runtime-${CACHE_VERSION}`;
 const MAX_IMAGE_CACHE_ENTRIES = 80;
@@ -16,7 +17,12 @@ self.addEventListener("activate", (event) => {
         Promise.all(
           cacheNames
             .filter((cacheName) => cacheName.startsWith(CACHE_PREFIX))
-            .filter((cacheName) => cacheName !== IMAGE_CACHE && cacheName !== RUNTIME_CACHE)
+            .filter(
+              (cacheName) =>
+                cacheName !== DOCUMENT_CACHE &&
+                cacheName !== IMAGE_CACHE &&
+                cacheName !== RUNTIME_CACHE
+            )
             .map((cacheName) => caches.delete(cacheName))
         )
       )
@@ -45,9 +51,31 @@ const cacheFirst = async (request, cacheName) => {
   return response;
 };
 
+const staleWhileRevalidate = async (request, cacheName) => {
+  const cache = await caches.open(cacheName);
+  const cached = await cache.match(request);
+
+  const network = fetch(request)
+    .then((response) => {
+      if (response.ok) {
+        cache.put(request, response.clone());
+      }
+
+      return response;
+    })
+    .catch(() => cached || Response.error());
+
+  return cached || network;
+};
+
 self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET") return;
+
+  if (request.mode === "navigate") {
+    event.respondWith(staleWhileRevalidate(request, DOCUMENT_CACHE));
+    return;
+  }
 
   if (request.destination === "image") {
     event.respondWith(

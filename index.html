@@ -35,7 +35,15 @@
 
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="/profile.webp" as="image" type="image/webp" />
+    <link
+      rel="preload"
+      href="/profile-400.webp"
+      as="image"
+      type="image/webp"
+      fetchpriority="high"
+      imagesrcset="/profile-160.webp 160w, /profile-400.webp 400w, /profile.webp 800w"
+      imagesizes="128px"
+    />
 
     <!-- Critical CSS inline for immediate rendering -->
     <style>
@@ -69,7 +77,7 @@
     <!-- Fonts are self-hosted via @fontsource-variable (bundled in Vite build).
          No external font requests — zero CDN roundtrips, zero FOUT. -->
 
-    <script type="module" crossorigin src="/assets/index-BLB9KR1T.js"></script>
+    <script type="module" crossorigin src="/assets/index-Cg8AlF8J.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-AHO760RB.js">
     <link rel="modulepreload" crossorigin href="/assets/ui-C59jMHDj.js">
     <link rel="modulepreload" crossorigin href="/assets/router-Cnl0MMtu.js">

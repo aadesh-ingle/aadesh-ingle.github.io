@@ -1,1 +1,0 @@
-const t=[400,800],r=r=>{if(!(t=>!t.startsWith("http://")&&!t.startsWith("https://")&&!t.startsWith("data:"))(r))return;const s=(t=>t.replace(/\.[^/.]+$/,""))(r);return[...t.map(t=>`${s}-${t}.webp ${t}w`),`${s}.webp 1200w`].join(", ")};export{r};
