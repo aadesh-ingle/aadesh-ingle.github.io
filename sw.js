@@ -1,32 +1,40 @@
 const CACHE_PREFIX = "aadesh-blog";
-const CACHE_VERSION = "v3";
+const CACHE_VERSION = "v4";
 const DOCUMENT_CACHE = `${CACHE_PREFIX}-documents-${CACHE_VERSION}`;
 const IMAGE_CACHE = `${CACHE_PREFIX}-images-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}-runtime-${CACHE_VERSION}`;
 const MAX_IMAGE_CACHE_ENTRIES = 80;
+const APP_SHELL_URLS = ["/", "/index.html", "/favicon.svg", "/profile-160.webp", "/profile-400.webp"];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(self.skipWaiting());
+  event.waitUntil(
+    caches
+      .open(DOCUMENT_CACHE)
+      .then((cache) => cache.addAll(APP_SHELL_URLS))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches
-      .keys()
-      .then((cacheNames) =>
-        Promise.all(
-          cacheNames
-            .filter((cacheName) => cacheName.startsWith(CACHE_PREFIX))
-            .filter(
-              (cacheName) =>
-                cacheName !== DOCUMENT_CACHE &&
-                cacheName !== IMAGE_CACHE &&
-                cacheName !== RUNTIME_CACHE
-            )
-            .map((cacheName) => caches.delete(cacheName))
-        )
-      )
-      .then(() => self.clients.claim())
+    Promise.all([
+      self.registration.navigationPreload ? self.registration.navigationPreload.enable() : undefined,
+      caches
+        .keys()
+        .then((cacheNames) =>
+          Promise.all(
+            cacheNames
+              .filter((cacheName) => cacheName.startsWith(CACHE_PREFIX))
+              .filter(
+                (cacheName) =>
+                  cacheName !== DOCUMENT_CACHE &&
+                  cacheName !== IMAGE_CACHE &&
+                  cacheName !== RUNTIME_CACHE
+              )
+              .map((cacheName) => caches.delete(cacheName))
+          )
+        ),
+    ]).then(() => self.clients.claim())
   );
 });
 
@@ -51,11 +59,12 @@ const cacheFirst = async (request, cacheName) => {
   return response;
 };
 
-const staleWhileRevalidate = async (request, cacheName) => {
+const staleWhileRevalidate = async (request, cacheName, preloadResponsePromise) => {
   const cache = await caches.open(cacheName);
   const cached = await cache.match(request);
 
-  const network = fetch(request)
+  const network = Promise.resolve(preloadResponsePromise)
+    .then((preloadResponse) => preloadResponse || fetch(request))
     .then((response) => {
       if (response.ok) {
         cache.put(request, response.clone());
@@ -73,7 +82,7 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
 
   if (request.mode === "navigate") {
-    event.respondWith(staleWhileRevalidate(request, DOCUMENT_CACHE));
+    event.respondWith(staleWhileRevalidate(request, DOCUMENT_CACHE, event.preloadResponse));
     return;
   }
 
