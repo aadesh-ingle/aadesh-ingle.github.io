@@ -1,10 +1,18 @@
 const CACHE_PREFIX = "aadesh-blog";
-const CACHE_VERSION = "v4";
+const CACHE_VERSION = "v5";
 const DOCUMENT_CACHE = `${CACHE_PREFIX}-documents-${CACHE_VERSION}`;
 const IMAGE_CACHE = `${CACHE_PREFIX}-images-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}-runtime-${CACHE_VERSION}`;
 const MAX_IMAGE_CACHE_ENTRIES = 80;
-const APP_SHELL_URLS = ["/", "/index.html", "/favicon.svg", "/profile-160.webp", "/profile-400.webp"];
+const APP_SHELL_URLS = [
+  "/",
+  "/index.html",
+  "/favicon.svg",
+  "/profile-160.avif",
+  "/profile-400.avif",
+  "/profile-160.webp",
+  "/profile-400.webp",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
