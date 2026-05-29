@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "aadesh-blog";
-const CACHE_VERSION = "v5";
+const CACHE_VERSION = "v6";
 const DOCUMENT_CACHE = `${CACHE_PREFIX}-documents-${CACHE_VERSION}`;
 const IMAGE_CACHE = `${CACHE_PREFIX}-images-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}-runtime-${CACHE_VERSION}`;
