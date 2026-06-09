@@ -29,6 +29,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://aadesh-ingle.github.io/blog/golden-cases-come-from-funerals</loc>
+    <lastmod>2026-06-07</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aadesh-ingle.github.io/blog/the-model-is-the-easy-part</loc>
     <lastmod>2026-06-02</lastmod>
     <priority>0.8</priority>
@@ -41,6 +46,11 @@
   <url>
     <loc>https://aadesh-ingle.github.io/blog/evals-are-the-operating-system</loc>
     <lastmod>2026-04-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aadesh-ingle.github.io/blog/the-bug-was-in-the-transcript</loc>
+    <lastmod>2026-03-14</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -59,8 +69,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aadesh-ingle.github.io/blog/writing-down-what-you-didnt-measure</loc>
+    <lastmod>2025-10-11</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aadesh-ingle.github.io/blog/demos-close-deals-boring-systems-keep-them</loc>
     <lastmod>2025-09-13</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aadesh-ingle.github.io/blog/what-actually-happens-when-you-call-an-llm-api</loc>
+    <lastmod>2025-08-09</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -71,6 +91,11 @@
   <url>
     <loc>https://aadesh-ingle.github.io/blog/own-your-got-damn-failures</loc>
     <lastmod>2025-03-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aadesh-ingle.github.io/blog/why-output-tokens-cost-more</loc>
+    <lastmod>2025-02-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
