@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "aadesh-blog";
-const CACHE_VERSION = "v6";
+const CACHE_VERSION = "v7";
 const DOCUMENT_CACHE = `${CACHE_PREFIX}-documents-${CACHE_VERSION}`;
 const IMAGE_CACHE = `${CACHE_PREFIX}-images-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}-runtime-${CACHE_VERSION}`;
@@ -7,7 +7,9 @@ const MAX_IMAGE_CACHE_ENTRIES = 80;
 const APP_SHELL_URLS = [
   "/",
   "/index.html",
-  "/favicon.svg",
+  "/favicon-32.png",
+  "/favicon-16.png",
+  "/apple-touch-icon.png",
   "/profile-160.avif",
   "/profile-400.avif",
   "/profile-160.webp",
