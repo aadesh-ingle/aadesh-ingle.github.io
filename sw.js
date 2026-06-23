@@ -1,5 +1,5 @@
 const CACHE_PREFIX = "aadesh-blog";
-const CACHE_VERSION = "v7";
+const CACHE_VERSION = "v8";
 const DOCUMENT_CACHE = `${CACHE_PREFIX}-documents-${CACHE_VERSION}`;
 const IMAGE_CACHE = `${CACHE_PREFIX}-images-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}-runtime-${CACHE_VERSION}`;
@@ -69,22 +69,21 @@ const cacheFirst = async (request, cacheName) => {
   return response;
 };
 
-const staleWhileRevalidate = async (request, cacheName, preloadResponsePromise) => {
+const networkFirst = async (request, cacheName, preloadResponsePromise) => {
   const cache = await caches.open(cacheName);
   const cached = await cache.match(request);
 
-  const network = Promise.resolve(preloadResponsePromise)
-    .then((preloadResponse) => preloadResponse || fetch(request))
-    .then((response) => {
-      if (response.ok) {
-        cache.put(request, response.clone());
-      }
+  try {
+    const response =
+      (await Promise.resolve(preloadResponsePromise)) || (await fetch(request));
+    if (response.ok) {
+      cache.put(request, response.clone());
+    }
 
-      return response;
-    })
-    .catch(() => cached || Response.error());
-
-  return cached || network;
+    return response;
+  } catch {
+    return cached || Response.error();
+  }
 };
 
 self.addEventListener("fetch", (event) => {
@@ -92,7 +91,7 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
 
   if (request.mode === "navigate") {
-    event.respondWith(staleWhileRevalidate(request, DOCUMENT_CACHE, event.preloadResponse));
+    event.respondWith(networkFirst(request, DOCUMENT_CACHE, event.preloadResponse));
     return;
   }
 
