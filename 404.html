@@ -32,34 +32,56 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <!-- Critical CSS inline for immediate rendering -->
+    <!-- Critical CSS inline: theme tokens + above-the-fold layout so
+         prerendered HTML paints correctly before the main CSS bundle loads. -->
     <style>
-      /* Critical styles for above-the-fold content */
+      :root {
+        --background: 45 20% 93%;
+        --foreground: 240 5% 10%;
+        --card: 45 20% 90%;
+        --rule: 42 16% 76%;
+        --ink: 30 16% 11%;
+        --brass: 38 28% 36%;
+        --terracotta: 14 62% 43%;
+        --paper: var(--background);
+        color-scheme: light dark;
+      }
+      .dark {
+        --background: 210 4% 10%;
+        --foreground: 214 14% 91%;
+        --card: 210 3% 15%;
+        --rule: 36 8% 26%;
+        --ink: 40 16% 88%;
+        --brass: 40 16% 58%;
+        --terracotta: 14 62% 58%;
+      }
       body {
-        font-family: system-ui, -apple-system, sans-serif;
+        font-family: 'Outfit Variable', 'Outfit', system-ui, -apple-system, sans-serif;
         margin: 0;
+        background: hsl(var(--background));
+        color: hsl(var(--foreground));
       }
       #root {
         min-height: 100vh;
       }
-      .hero-section {
-        padding-top: 8rem;
-        min-height: 60vh;
-      }
-      .profile-img {
-        width: 8rem;
-        height: 8rem;
-        border-radius: 50%;
-        -o-object-fit: cover;
-           object-fit: cover;
-      }
-      .typing-container {
-        min-height: 2.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
     </style>
+
+    <!-- Pre-paint theme bootstrap. The theme preference now defaults to
+         "system", so without this a visitor on a dark OS gets served the
+         prerendered light HTML and sees it flip once React hydrates. Inline and
+         synchronous on purpose: it must run before first paint. Mirrors the
+         resolution order in src/hooks/useTheme.ts. -->
+    <script>
+      (function () {
+        try {
+          var pref = localStorage.getItem('theme');
+          if (pref !== 'light' && pref !== 'dark') pref = 'system';
+          var dark = pref === 'dark' ||
+            (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) { /* private mode: fall through to the light default */ }
+      })();
+    </script>
 
     <!-- Fonts are self-hosted via @fontsource-variable (bundled in Vite build).
          No external font requests — zero CDN roundtrips, zero FOUT. -->
@@ -85,13 +107,18 @@
       }
     </script>
 
-    <script type="module" crossorigin src="/assets/index-UZJtrg4u.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/vendor-CujDRwqU.js">
-    <link rel="modulepreload" crossorigin href="/assets/router-PYXsxfFe.js">
-    <link rel="modulepreload" crossorigin href="/assets/utils-CyKCnRV3.js">
-    <link rel="modulepreload" crossorigin href="/assets/icons-C48o6tGK.js">
-    <link rel="modulepreload" crossorigin href="/assets/ui-D0kfq8_P.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-DDKSCKnV.css">
+    <script type="module" crossorigin src="/assets/index-DmnQvwmU.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/vendor-DzA5IH5n.js">
+    <link rel="modulepreload" crossorigin href="/assets/router-BVZpA9xC.js">
+    <link rel="modulepreload" crossorigin href="/assets/utils-BTGVH9Kg.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-ClU9Uc25.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-BaX_zA6d.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-DlG06DKG.css">
+    <link rel="preload" href="/assets/fraunces-latin-standard-normal-DihXLNYH.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/assets/outfit-latin-wght-normal-Bc-8i84L.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/assets/caveat-latin-wght-normal-C1hSzPvX.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="modulepreload" href="/assets/Blog-6vJtoB-y.js">
+    <link rel="modulepreload" href="/assets/About-D4kFWTyi.js">
   </head>
 
   <body>

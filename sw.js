@@ -1,10 +1,11 @@
 const CACHE_PREFIX = "aadesh-blog";
-const CACHE_VERSION = "v8";
+const CACHE_VERSION = "vcpvfjg";
 const DOCUMENT_CACHE = `${CACHE_PREFIX}-documents-${CACHE_VERSION}`;
 const IMAGE_CACHE = `${CACHE_PREFIX}-images-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `${CACHE_PREFIX}-runtime-${CACHE_VERSION}`;
 const MAX_IMAGE_CACHE_ENTRIES = 80;
 const APP_SHELL_URLS = [
+
   "/",
   "/index.html",
   "/favicon-32.png",
@@ -14,6 +15,58 @@ const APP_SHELL_URLS = [
   "/profile-400.avif",
   "/profile-160.webp",
   "/profile-400.webp",
+  // --- hashed build assets (injected by sw-manifest.mjs) ---
+  "/assets/About-D4kFWTyi.js",
+  "/assets/ArticleCard-sFfAugOF.js",
+  "/assets/Artifacts-DmKBZMLo.js",
+  "/assets/BackToTop-BdrQtkC3.js",
+  "/assets/Blog-6vJtoB-y.js",
+  "/assets/BlogPost-BWaxFuYY.js",
+  "/assets/Books-D2rWuyTK.js",
+  "/assets/Breadcrumbs-DEaX9CSY.js",
+  "/assets/CommandPalette-BRVwhMtn.js",
+  "/assets/Gallery-DWi8JcBA.js",
+  "/assets/List-D6_m3i1h.js",
+  "/assets/NotFound-DdpYIgG6.js",
+  "/assets/Projects-I1baY4M3.js",
+  "/assets/Tag-C__wUbUF.js",
+  "/assets/TagPage-C1tTCnol.js",
+  "/assets/article-D6W0B2-B.css",
+  "/assets/bleu-lies-CXXGiMvO.js",
+  "/assets/books-DE2pbuI7.js",
+  "/assets/caveat-latin-wght-normal-C1hSzPvX.woff2",
+  "/assets/command-palette-B7OqEjc1.css",
+  "/assets/command-palette-D4npCbF8.js",
+  "/assets/demos-close-deals-boring-systems-keep-them-BfbI5DOr.js",
+  "/assets/dialog-tfZWvnUe.js",
+  "/assets/evals-are-the-operating-system-DooQf3O2.js",
+  "/assets/four-years-of-saturdays-Ct_y6rhW.js",
+  "/assets/fraunces-latin-standard-normal-DihXLNYH.woff2",
+  "/assets/golden-cases-come-from-funerals-CjZDki3n.js",
+  "/assets/icons-ClU9Uc25.js",
+  "/assets/index-DPGwyPfZ.js",
+  "/assets/index-DlG06DKG.css",
+  "/assets/index-DmnQvwmU.js",
+  "/assets/outfit-latin-wght-normal-Bc-8i84L.woff2",
+  "/assets/own-your-got-damn-failures-xwRuosdA.js",
+  "/assets/principles-i-reread-before-starting-anything-new-CvHeGMEl.js",
+  "/assets/router-BVZpA9xC.js",
+  "/assets/running-two-model-providers-in-production-2nu-CvVs.js",
+  "/assets/search-for-languages-the-internet-forgot-OmMCW2ke.js",
+  "/assets/stop-being-the-thing-inside-the-loop-CZs5E3xL.js",
+  "/assets/structured-demand-from-chaos-DkrQlLoW.js",
+  "/assets/the-bug-was-in-the-transcript-av9z4TQn.js",
+  "/assets/the-first-two-weeks-are-for-listening-DdSH9yL9.js",
+  "/assets/the-model-is-the-easy-part-BOPv5KDv.js",
+  "/assets/the-unreasonable-effectiveness-of-cleaning-data-Bszf_bZ_.js",
+  "/assets/the-voice-agent-tradeoff-X87ZP4_J.js",
+  "/assets/ui-BaX_zA6d.js",
+  "/assets/utils-BTGVH9Kg.js",
+  "/assets/vendor-DzA5IH5n.js",
+  "/assets/what-actually-happens-when-you-call-an-llm-api-SCF9fsCG.js",
+  "/assets/where-the-human-belongs-in-the-loop-Bg8NH4yK.js",
+  "/assets/why-output-tokens-cost-more-Cgt4t9hN.js",
+  "/assets/writing-down-what-you-didnt-measure-BtaGMYNd.js",
 ];
 
 self.addEventListener("install", (event) => {
