@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <!-- Browser chrome matches the paper: without these the URL bar stayed
-         stock white over night paper. useTheme re-stamps both on manual
-         toggles, since the media conditions only track the OS setting. -->
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f2ed" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#1a1814" />
+    <!-- Browser chrome matches the paper. The site defaults to light whatever
+         the OS says, so the bar starts on light paper; useTheme re-stamps it
+         when a reader picks dark (or system on a dark OS). -->
+    <meta name="theme-color" content="#f3f2ed" />
     <!-- managed-head:start — replaced per-route by scripts/prerender.mjs; this default is the home + SPA fallback -->
     <title>Aadesh Ingle</title>
     <meta name="description" content="Aadesh Ingle, founding engineer building production AI systems (agents, RAG, voice, evals). Writing on shipping reliable AI, deep learning, and the craft of engineering." />
@@ -47,14 +46,14 @@
     <style>
       :root {
         --background: 45 20% 93%;
-        --foreground: 240 5% 10%;
+        --foreground: 30 16% 11%;
         --card: 45 20% 90%;
         --rule: 42 16% 76%;
         --ink: 30 16% 11%;
         --brass: 38 28% 36%;
         --terracotta: 14 62% 43%;
         --paper: var(--background);
-        color-scheme: light dark;
+        color-scheme: light;
       }
       .dark {
         --background: 40 12% 9%;
@@ -64,6 +63,7 @@
         --ink: 40 16% 88%;
         --brass: 40 16% 58%;
         --terracotta: 14 62% 58%;
+        color-scheme: dark;
       }
       body {
         font-family: 'Outfit Variable', 'Outfit', system-ui, -apple-system, sans-serif;
@@ -76,16 +76,20 @@
       }
     </style>
 
-    <!-- Pre-paint theme bootstrap. The theme preference now defaults to
-         "system", so without this a visitor on a dark OS gets served the
-         prerendered light HTML and sees it flip once React hydrates. Inline and
-         synchronous on purpose: it must run before first paint. Mirrors the
-         resolution order in src/hooks/useTheme.ts. -->
+    <!-- Pre-paint theme bootstrap. The site defaults to light; this applies a
+         reader's saved choice (dark, or system on a dark OS) before first
+         paint so the prerendered light HTML never flips after hydration.
+         Mirrors the resolution order in src/hooks/useTheme.ts: the
+         'theme-pref' key, then an explicit light/dark under the legacy
+         'theme' key, then light. -->
     <script>
       (function () {
         try {
-          var pref = localStorage.getItem('theme');
-          if (pref !== 'light' && pref !== 'dark') pref = 'system';
+          var pref = localStorage.getItem('theme-pref');
+          if (pref !== 'light' && pref !== 'dark' && pref !== 'system') {
+            var legacy = localStorage.getItem('theme');
+            pref = legacy === 'dark' ? 'dark' : 'light';
+          }
           var dark = pref === 'dark' ||
             (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
           if (dark) document.documentElement.classList.add('dark');
@@ -117,7 +121,7 @@
       }
     </script>
 
-    <script type="module" crossorigin src="/assets/index-BCNDbPO6.js"></script>
+    <script type="module" crossorigin src="/assets/index-DXD77cgS.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-DzA5IH5n.js">
     <link rel="modulepreload" crossorigin href="/assets/router-BajukSaI.js">
     <link rel="modulepreload" crossorigin href="/assets/utils-BTGVH9Kg.js">
@@ -126,8 +130,8 @@
     <link rel="stylesheet" crossorigin href="/assets/index-CaE_mNXO.css">
     <link rel="preload" href="/assets/fraunces-latin-standard-normal-DihXLNYH.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="/assets/outfit-latin-wght-normal-Bc-8i84L.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="modulepreload" href="/assets/Blog-CDijJTXt.js">
-    <link rel="modulepreload" href="/assets/About-MR5wkhwZ.js">
+    <link rel="modulepreload" href="/assets/Blog-Cm1D4DeU.js">
+    <link rel="modulepreload" href="/assets/About-R_x0HxOk.js">
   </head>
 
   <body>
