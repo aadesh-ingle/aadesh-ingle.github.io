@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>(function(){var c=navigator.connection;if(c&&(c.saveData||/(^|-)(2g|3g)$/.test(c.effectiveType||"")))return;["/assets/fraunces-latin-standard-normal-DihXLNYH.woff2","/assets/outfit-latin-wght-normal-Bc-8i84L.woff2","/fonts/caveat-subset.woff2"].forEach(function(h){var l=document.createElement("link");l.rel="preload";l.as="font";l.type="font/woff2";l.crossOrigin="anonymous";l.href=h;document.head.appendChild(l)})})();</script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <!-- Browser chrome matches the paper. The site defaults to light whatever
@@ -33,10 +35,9 @@
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Journal · Aadesh Ingle","url":"https://aadesh-ingle.github.io/blog","description":"Essays and notes on AI engineering, deep learning, and the craft of shipping reliable systems.","isPartOf":{"@type":"WebSite","name":"Aadesh Ingle","url":"https://aadesh-ingle.github.io"}}</script>
     <!-- managed-head:end -->
 
-    <!-- The identity hand, subset to 24KB (scripts/subset-caveat.mjs). Preloaded
-         so the hero's handwriting arrives with the first paint rather than
-         swapping in seconds later - it was the page's LCP repaint. -->
-    <link rel="preload" href="/fonts/caveat-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Font preloads (Fraunces, Outfit, and the Caveat subset) are injected
+         by the font-preload plugin in vite.config.ts, which skips them on
+         Save-Data and 2G/3G connections. -->
     <link rel="alternate" type="application/atom+xml" title="Field Journal" href="/feed.xml" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
@@ -122,17 +123,19 @@
       }
     </script>
 
-    <script type="module" crossorigin src="/assets/index-Ce3Y8hA0.js"></script>
+    <script type="module" crossorigin src="/assets/index-DdFzuUPw.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-DzA5IH5n.js">
     <link rel="modulepreload" crossorigin href="/assets/router-BajukSaI.js">
     <link rel="modulepreload" crossorigin href="/assets/utils-BTGVH9Kg.js">
     <link rel="modulepreload" crossorigin href="/assets/icons-D-GLO1H3.js">
     <link rel="modulepreload" crossorigin href="/assets/ui-BaX_zA6d.js">
     <link rel="stylesheet" crossorigin href="/assets/index-Ds3m1t5l.css">
-    <link rel="preload" href="/assets/fraunces-latin-standard-normal-DihXLNYH.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="/assets/outfit-latin-wght-normal-Bc-8i84L.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="modulepreload" href="/assets/Blog-DW9DRXZ_.js">
-    <link rel="modulepreload" href="/assets/About-xjJ7kvb4.js">
+      <link rel="modulepreload" crossorigin href="/assets/Blog-QwEuQZqE.js">
+    <link rel="modulepreload" crossorigin href="/assets/ArticleCard-DnrPltJD.js">
+    <link rel="modulepreload" crossorigin href="/assets/Breadcrumbs-DipLvrfk.js">
+    <link rel="modulepreload" crossorigin href="/assets/articleExperiments-Ct5PdKtT.js">
+    <link rel="modulepreload" crossorigin href="/assets/siteSearch-BpwJdkzd.js">
+    <link rel="modulepreload" crossorigin href="/assets/useRailFollowsHeader-yppIIKOJ.js">
   </head>
 
   <body>
@@ -160,6 +163,18 @@
         window.addEventListener("load", () => {
           navigator.serviceWorker.register("/sw.js").catch(() => {
             // The site must keep working if service workers are unavailable.
+          });
+          // The worker caches assets as they're used, but this first page
+          // loaded before it took control. Hand it the build assets already
+          // fetched (it copies them from the HTTP cache, not the network).
+          navigator.serviceWorker.ready.then((registration) => {
+            const urls = performance
+              .getEntriesByType("resource")
+              .map((entry) => entry.name)
+              .filter((name) => name.indexOf(location.origin + "/assets/") === 0);
+            if (urls.length && registration.active) {
+              registration.active.postMessage({ type: "cache-loaded-assets", urls: urls });
+            }
           });
         });
       }
