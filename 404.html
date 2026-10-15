@@ -84,6 +84,10 @@
          'theme-pref' key, then an explicit light/dark under the legacy
          'theme' key, then light. -->
     <script>
+      // The prerendered page is already here: show it at once instead of
+      // fading it in. main.tsx lifts this mark after load, so content that
+      // arrives later (a route change, a modal) still enters with motion.
+      document.documentElement.setAttribute('data-first-paint', '');
       (function () {
         try {
           var pref = localStorage.getItem('theme-pref');
@@ -101,34 +105,17 @@
     <!-- Fonts are self-hosted via @fontsource-variable (bundled in Vite build).
          No external font requests — zero CDN roundtrips, zero FOUT. -->
 
-    <!-- Speculation Rules: prerender same-origin pages when the user shows
-         intent (hovers ~200ms / pointerdown). Chrome loads the target's
-         prerendered HTML + boots it in a hidden tab, so the click is
-         near-instant. Same-origin only; no-op in non-supporting browsers.
-         https://developer.chrome.com/docs/web-platform/prerender-pages -->
-    <script type="speculationrules">
-      {
-        "prerender": [
-          {
-            "where": {
-              "and": [
-                { "href_matches": "/*" },
-                { "not": { "selector_matches": "[rel~=external], [target=_blank]" } }
-              ]
-            },
-            "eagerness": "moderate"
-          }
-        ]
-      }
-    </script>
+    <!-- No Speculation Rules: React Router handles every same-site click, so
+         a prerendered document is never activated, only built and dropped.
+         Route code is prefetched on intent instead (src/lib/routeLoaders.ts). -->
 
-    <script type="module" crossorigin src="/assets/index-DZ5fiLCW.js"></script>
+    <script type="module" crossorigin src="/assets/index-potPUUcs.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-DzA5IH5n.js">
     <link rel="modulepreload" crossorigin href="/assets/router-BajukSaI.js">
     <link rel="modulepreload" crossorigin href="/assets/utils-BTGVH9Kg.js">
     <link rel="modulepreload" crossorigin href="/assets/icons-D-GLO1H3.js">
     <link rel="modulepreload" crossorigin href="/assets/ui-BaX_zA6d.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-6iRmsCVI.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-ROtOhZvk.css">
   </head>
 
   <body>

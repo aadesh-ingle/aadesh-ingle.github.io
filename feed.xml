@@ -9,152 +9,152 @@
   <author><name>Aadesh Ingle</name></author>
   <entry>
     <title>Stop Being the Thing Inside the Loop</title>
-    <id>https://aadesh-ingle.github.io/blog/stop-being-the-thing-inside-the-loop</id>
-    <link href="https://aadesh-ingle.github.io/blog/stop-being-the-thing-inside-the-loop"/>
+    <id>https://aadesh-ingle.github.io/blog/stop-being-the-thing-inside-the-loop/</id>
+    <link href="https://aadesh-ingle.github.io/blog/stop-being-the-thing-inside-the-loop/"/>
     <published>2026-06-10T00:00:00.000Z</published>
     <updated>2026-06-10T00:00:00.000Z</updated>
     <summary>A production agent loop needs external checks, durable state, and hard limits. Without those, it is repeated prompting with a budget.</summary>
   </entry>
   <entry>
     <title>Golden Cases Come From Funerals</title>
-    <id>https://aadesh-ingle.github.io/blog/golden-cases-come-from-funerals</id>
-    <link href="https://aadesh-ingle.github.io/blog/golden-cases-come-from-funerals"/>
+    <id>https://aadesh-ingle.github.io/blog/golden-cases-come-from-funerals/</id>
+    <link href="https://aadesh-ingle.github.io/blog/golden-cases-come-from-funerals/"/>
     <published>2026-06-07T00:00:00.000Z</published>
     <updated>2026-06-07T00:00:00.000Z</updated>
     <summary>Our golden cases are anonymized production failures with assertions attached. Keeping the original thread, trace, and expected behavior has made them more useful than cases invented before launch.</summary>
   </entry>
   <entry>
     <title>The Model Is the Easy Part</title>
-    <id>https://aadesh-ingle.github.io/blog/the-model-is-the-easy-part</id>
-    <link href="https://aadesh-ingle.github.io/blog/the-model-is-the-easy-part"/>
+    <id>https://aadesh-ingle.github.io/blog/the-model-is-the-easy-part/</id>
+    <link href="https://aadesh-ingle.github.io/blog/the-model-is-the-easy-part/"/>
     <published>2026-06-02T00:00:00.000Z</published>
     <updated>2026-06-02T00:00:00.000Z</updated>
     <summary>In production, the model call sits inside permissions, policy, retries, evals, and traces. Those surrounding systems decide whether a promising demo survives contact with a customer workflow.</summary>
   </entry>
   <entry>
     <title>The First Two Weeks Are for Listening</title>
-    <id>https://aadesh-ingle.github.io/blog/the-first-two-weeks-are-for-listening</id>
-    <link href="https://aadesh-ingle.github.io/blog/the-first-two-weeks-are-for-listening"/>
+    <id>https://aadesh-ingle.github.io/blog/the-first-two-weeks-are-for-listening/</id>
+    <link href="https://aadesh-ingle.github.io/blog/the-first-two-weeks-are-for-listening/"/>
     <published>2026-05-17T00:00:00.000Z</published>
     <updated>2026-05-17T00:00:00.000Z</updated>
     <summary>Before I build for a new client, I watch the people doing the work: their tabs, workarounds, retyping, and judgment calls. Those first two weeks often change what we build first.</summary>
   </entry>
   <entry>
     <title>Evals Are the Operating System</title>
-    <id>https://aadesh-ingle.github.io/blog/evals-are-the-operating-system</id>
-    <link href="https://aadesh-ingle.github.io/blog/evals-are-the-operating-system"/>
+    <id>https://aadesh-ingle.github.io/blog/evals-are-the-operating-system/</id>
+    <link href="https://aadesh-ingle.github.io/blog/evals-are-the-operating-system/"/>
     <published>2026-04-12T00:00:00.000Z</published>
     <updated>2026-04-12T00:00:00.000Z</updated>
     <summary>A freight-negotiation agent had become too eager to close, and we could not measure the cost cleanly. An 87-test suite with 19 production cases gave us a release gate for the next model migration.</summary>
   </entry>
   <entry>
     <title>The Bug Was in the Transcript</title>
-    <id>https://aadesh-ingle.github.io/blog/the-bug-was-in-the-transcript</id>
-    <link href="https://aadesh-ingle.github.io/blog/the-bug-was-in-the-transcript"/>
+    <id>https://aadesh-ingle.github.io/blog/the-bug-was-in-the-transcript/</id>
+    <link href="https://aadesh-ingle.github.io/blog/the-bug-was-in-the-transcript/"/>
     <published>2026-03-14T00:00:00.000Z</published>
     <updated>2026-03-14T00:00:00.000Z</updated>
     <summary>A voice-agent complaint can originate in speech recognition, model decisions, tool execution, or turn timing. I read the transcript and event trace in that order before touching the prompt.</summary>
   </entry>
   <entry>
     <title>Trading Voice Quality for Reliability</title>
-    <id>https://aadesh-ingle.github.io/blog/the-voice-agent-tradeoff</id>
-    <link href="https://aadesh-ingle.github.io/blog/the-voice-agent-tradeoff"/>
+    <id>https://aadesh-ingle.github.io/blog/the-voice-agent-tradeoff/</id>
+    <link href="https://aadesh-ingle.github.io/blog/the-voice-agent-tradeoff/"/>
     <published>2026-02-08T00:00:00.000Z</published>
     <updated>2026-02-08T00:00:00.000Z</updated>
     <summary>A recruitment voice agent sounded natural but kept missing tool calls. We replaced one fused speech model with a slower, inspectable pipeline and measured whether reliability justified the extra latency.</summary>
   </entry>
   <entry>
     <title>Three Thousand WhatsApp Messages a Day</title>
-    <id>https://aadesh-ingle.github.io/blog/structured-demand-from-chaos</id>
-    <link href="https://aadesh-ingle.github.io/blog/structured-demand-from-chaos"/>
+    <id>https://aadesh-ingle.github.io/blog/structured-demand-from-chaos/</id>
+    <link href="https://aadesh-ingle.github.io/blog/structured-demand-from-chaos/"/>
     <published>2026-01-17T00:00:00.000Z</published>
     <updated>2026-01-17T00:00:00.000Z</updated>
     <summary>A logistics customer receives about 3,000 WhatsApp messages and 500 emails a day. We turn them into CRM demand records with a queue, an LLM extractor, entity resolution, deduplication, and a review lane.</summary>
   </entry>
   <entry>
     <title>Where the Human Belongs in the Loop</title>
-    <id>https://aadesh-ingle.github.io/blog/where-the-human-belongs-in-the-loop</id>
-    <link href="https://aadesh-ingle.github.io/blog/where-the-human-belongs-in-the-loop"/>
+    <id>https://aadesh-ingle.github.io/blog/where-the-human-belongs-in-the-loop/</id>
+    <link href="https://aadesh-ingle.github.io/blog/where-the-human-belongs-in-the-loop/"/>
     <published>2025-11-08T00:00:00.000Z</published>
     <updated>2025-11-08T00:00:00.000Z</updated>
     <summary>Reviewing every AI output wastes the attention human oversight is meant to provide. Route uncertain and irreversible cases to people, then keep their corrections as evaluation data.</summary>
   </entry>
   <entry>
     <title>Writing Down What You Didn't Measure</title>
-    <id>https://aadesh-ingle.github.io/blog/writing-down-what-you-didnt-measure</id>
-    <link href="https://aadesh-ingle.github.io/blog/writing-down-what-you-didnt-measure"/>
+    <id>https://aadesh-ingle.github.io/blog/writing-down-what-you-didnt-measure/</id>
+    <link href="https://aadesh-ingle.github.io/blog/writing-down-what-you-didnt-measure/"/>
     <published>2025-10-11T00:00:00.000Z</published>
     <updated>2025-10-11T00:00:00.000Z</updated>
     <summary>I keep a small file of project claims beside the evidence for each one. It preserves the difference between a measured result, an estimate, and something we believe but have not tested.</summary>
   </entry>
   <entry>
     <title>Demos Close Deals. Boring Systems Keep Them.</title>
-    <id>https://aadesh-ingle.github.io/blog/demos-close-deals-boring-systems-keep-them</id>
-    <link href="https://aadesh-ingle.github.io/blog/demos-close-deals-boring-systems-keep-them"/>
+    <id>https://aadesh-ingle.github.io/blog/demos-close-deals-boring-systems-keep-them/</id>
+    <link href="https://aadesh-ingle.github.io/blog/demos-close-deals-boring-systems-keep-them/"/>
     <published>2025-09-13T00:00:00.000Z</published>
     <updated>2025-09-13T00:00:00.000Z</updated>
     <summary>Ninety days after a successful AI demo, clients ask about failed batches, monthly cost, and recovery paths. Renewals depend on the answers.</summary>
   </entry>
   <entry>
     <title>What Actually Happens When You Call an LLM API</title>
-    <id>https://aadesh-ingle.github.io/blog/what-actually-happens-when-you-call-an-llm-api</id>
-    <link href="https://aadesh-ingle.github.io/blog/what-actually-happens-when-you-call-an-llm-api"/>
+    <id>https://aadesh-ingle.github.io/blog/what-actually-happens-when-you-call-an-llm-api/</id>
+    <link href="https://aadesh-ingle.github.io/blog/what-actually-happens-when-you-call-an-llm-api/"/>
     <published>2025-08-09T00:00:00.000Z</published>
     <updated>2025-08-09T00:00:00.000Z</updated>
     <summary>An LLM request crosses rate limits, tokenization, scheduling, inference, streaming, and billing before your application sees a response. That fuller model makes 429s, latency drift, and surprising bills easier to debug.</summary>
   </entry>
   <entry>
     <title>Running Two Model Providers in Production</title>
-    <id>https://aadesh-ingle.github.io/blog/running-two-model-providers-in-production</id>
-    <link href="https://aadesh-ingle.github.io/blog/running-two-model-providers-in-production"/>
+    <id>https://aadesh-ingle.github.io/blog/running-two-model-providers-in-production/</id>
+    <link href="https://aadesh-ingle.github.io/blog/running-two-model-providers-in-production/"/>
     <published>2025-06-21T00:00:00.000Z</published>
     <updated>2025-06-21T00:00:00.000Z</updated>
     <summary>We run OpenAI and Gemini across client deployments. Prompts need provider-specific work; the eval cases, contracts, and traces are what let us move safely between them.</summary>
   </entry>
   <entry>
     <title>Own the Failure Before It Becomes a Story</title>
-    <id>https://aadesh-ingle.github.io/blog/own-your-got-damn-failures</id>
-    <link href="https://aadesh-ingle.github.io/blog/own-your-got-damn-failures"/>
+    <id>https://aadesh-ingle.github.io/blog/own-your-got-damn-failures/</id>
+    <link href="https://aadesh-ingle.github.io/blog/own-your-got-damn-failures/"/>
     <published>2025-03-21T00:00:00.000Z</published>
     <updated>2025-03-21T00:00:00.000Z</updated>
     <summary>After watching a friend write carefully about a breakup, I started treating personal failures more like postmortems: record what happened before memory makes my role smaller.</summary>
   </entry>
   <entry>
     <title>Why Output Tokens Cost More Than Input</title>
-    <id>https://aadesh-ingle.github.io/blog/why-output-tokens-cost-more</id>
-    <link href="https://aadesh-ingle.github.io/blog/why-output-tokens-cost-more"/>
+    <id>https://aadesh-ingle.github.io/blog/why-output-tokens-cost-more/</id>
+    <link href="https://aadesh-ingle.github.io/blog/why-output-tokens-cost-more/"/>
     <published>2025-02-15T00:00:00.000Z</published>
     <updated>2025-02-15T00:00:00.000Z</updated>
     <summary>Output generation is sequential and keeps cached state in GPU memory while a response runs. That mechanism helps explain the price gap and changes how I set output limits, prompt order, and streaming.</summary>
   </entry>
   <entry>
     <title>Principles I Reread Before Starting Anything New</title>
-    <id>https://aadesh-ingle.github.io/blog/principles-i-reread-before-starting-anything-new</id>
-    <link href="https://aadesh-ingle.github.io/blog/principles-i-reread-before-starting-anything-new"/>
+    <id>https://aadesh-ingle.github.io/blog/principles-i-reread-before-starting-anything-new/</id>
+    <link href="https://aadesh-ingle.github.io/blog/principles-i-reread-before-starting-anything-new/"/>
     <published>2024-08-18T00:00:00.000Z</published>
     <updated>2024-08-18T00:00:00.000Z</updated>
     <summary>Six notes I reread before a new project or commitment. Each comes from a decision that cost more than writing the rule down would have.</summary>
   </entry>
   <entry>
     <title>The Unreasonable Effectiveness of Cleaning Data</title>
-    <id>https://aadesh-ingle.github.io/blog/the-unreasonable-effectiveness-of-cleaning-data</id>
-    <link href="https://aadesh-ingle.github.io/blog/the-unreasonable-effectiveness-of-cleaning-data"/>
+    <id>https://aadesh-ingle.github.io/blog/the-unreasonable-effectiveness-of-cleaning-data/</id>
+    <link href="https://aadesh-ingle.github.io/blog/the-unreasonable-effectiveness-of-cleaning-data/"/>
     <published>2024-04-14T00:00:00.000Z</published>
     <updated>2024-04-14T00:00:00.000Z</updated>
     <summary>A logistics customer's transporter table had missing identifiers, aliases, and duplicate companies. Cleaning it improved the downstream systems that depended on those records.</summary>
   </entry>
   <entry>
     <title>BLEU Lies</title>
-    <id>https://aadesh-ingle.github.io/blog/bleu-lies</id>
-    <link href="https://aadesh-ingle.github.io/blog/bleu-lies"/>
+    <id>https://aadesh-ingle.github.io/blog/bleu-lies/</id>
+    <link href="https://aadesh-ingle.github.io/blog/bleu-lies/"/>
     <published>2022-11-12T00:00:00.000Z</published>
     <updated>2022-11-12T00:00:00.000Z</updated>
     <summary>My image-captioning model scored ROUGE-L 39 and BLEU 10.3 on the same outputs. Reading the captions showed where both numbers were misleading.</summary>
   </entry>
   <entry>
     <title>Search for Languages the Internet Forgot</title>
-    <id>https://aadesh-ingle.github.io/blog/search-for-languages-the-internet-forgot</id>
-    <link href="https://aadesh-ingle.github.io/blog/search-for-languages-the-internet-forgot"/>
+    <id>https://aadesh-ingle.github.io/blog/search-for-languages-the-internet-forgot/</id>
+    <link href="https://aadesh-ingle.github.io/blog/search-for-languages-the-internet-forgot/"/>
     <published>2022-07-09T00:00:00.000Z</published>
     <updated>2022-07-09T00:00:00.000Z</updated>
     <summary>My Master's work tested dense retrieval where training pairs, benchmarks, and web text were scarce. The hardest part was building evidence that retrieval worked in the target languages.</summary>

@@ -23,7 +23,7 @@
  */
 const CACHE_PREFIX = "aadesh-blog";
 // Replaced at build time with a hash of this build's asset list.
-const CACHE_VERSION = "v7b1fcy";
+const CACHE_VERSION = "v3vm037";
 const SHELL_CACHE = `${CACHE_PREFIX}-shell-${CACHE_VERSION}`;
 const ASSET_CACHE = `${CACHE_PREFIX}-assets`;
 const IMAGE_CACHE = `${CACHE_PREFIX}-images`;
@@ -45,8 +45,8 @@ const APP_SHELL_URLS = [
   "/offline.html",
   // --- entry assets every page loads (injected by sw-manifest.mjs) ---
   "/assets/icons-D-GLO1H3.js",
-  "/assets/index-6iRmsCVI.css",
-  "/assets/index-DZ5fiLCW.js",
+  "/assets/index-ROtOhZvk.css",
+  "/assets/index-potPUUcs.js",
   "/assets/router-BajukSaI.js",
   "/assets/ui-BaX_zA6d.js",
   "/assets/utils-BTGVH9Kg.js",
@@ -55,7 +55,7 @@ const APP_SHELL_URLS = [
 
 // Every hashed file this build ships (injected by sw-manifest.mjs). Used only
 // to prune ASSET_CACHE of files from older builds, never to fetch.
-const BUILD_ASSETS = ["/assets/About-C8lEwhVJ.js","/assets/ArticleCard-Cn9NUvBc.js","/assets/ArticleFigure-vLbqxIx2.js","/assets/BackToTop-C_pl7F_N.js","/assets/Blog-C9VOo1bt.js","/assets/BlogPost-EFW77_CS.js","/assets/Books-BtLnlcgW.js","/assets/Breadcrumbs-Cf5P3-_0.js","/assets/CommandPalette-C9e96WvY.js","/assets/CommandPalette-k2q6n2xy.css","/assets/Gallery-CjauKNEZ.js","/assets/List-Si46eTg5.js","/assets/NotFound-CkgS6Mbe.js","/assets/Tag-D_IhTD96.js","/assets/TagPage-C2B2uNp2.js","/assets/Toolkit-Bzx0sJu_.js","/assets/Toolkit-CMCXQMMw.css","/assets/article-DQYm7CHm.css","/assets/articleFigures-CFnTac2V.js","/assets/basket-8Y8znLeG.js","/assets/bleu-lies-DRLY3_vE.js","/assets/books-BqwqEZlj.js","/assets/branches-CmqYzhls.js","/assets/cabinet-CV6db9_6.js","/assets/calipers-7QEWusML.js","/assets/cards-DMZ2bmN1.js","/assets/collectionModel-D6EQYI4a.js","/assets/demos-close-deals-boring-systems-keep-them-CLTuE2LB.js","/assets/dialog-BL0oBtjW.js","/assets/dish-C6bC0qle.js","/assets/drawer-BMMGwLHm.js","/assets/elevator-C_g_6ri-.js","/assets/evals-are-the-operating-system-6mc-XKKb.js","/assets/exploded-CF5pzwKA.js","/assets/format-4-hM9w5q.js","/assets/four-years-of-saturdays-Ct_y6rhW.js","/assets/fraunces-latin-standard-normal-DihXLNYH.woff2","/assets/golden-cases-come-from-funerals-Bid5FC-x.js","/assets/governor-CTztA1Sr.js","/assets/icons-D-GLO1H3.js","/assets/index-6iRmsCVI.css","/assets/index-DPGwyPfZ.js","/assets/index-DZ5fiLCW.js","/assets/keyboard-DpcSKEVY.js","/assets/lantern-xu77Rks_.js","/assets/links-CLU51XNf.js","/assets/loupe-D0cJa_jI.js","/assets/notebook-CosMRim7.js","/assets/outfit-latin-wght-normal-Bc-8i84L.woff2","/assets/own-your-got-damn-failures-Cp23M808.js","/assets/phosphor-3jG-Hs0S.js","/assets/plot-B8YSqH_D.js","/assets/plug-Do0l2Qg1.js","/assets/points-D6xIgA5K.js","/assets/principles-i-reread-before-starting-anything-new-CNSMBga9.js","/assets/receipt-CjRlWYOW.js","/assets/relay-BwfZ4xn9.js","/assets/router-BajukSaI.js","/assets/running-two-model-providers-in-production-yBdh7Zj_.js","/assets/search-for-languages-the-internet-forgot-zt0Z3A_s.js","/assets/settle-BRkQJcOa.js","/assets/sieve-DXg8hWrR.js","/assets/siteSearch-BpwJdkzd.js","/assets/slow-D-qnOrlY.js","/assets/specimens-BYGZvUJv.js","/assets/stack-C_NhWHUv.js","/assets/stop-being-the-thing-inside-the-loop-D57bLtQ3.js","/assets/structured-demand-from-chaos-BqEX9cXV.js","/assets/the-bug-was-in-the-transcript-BM1FvGrV.js","/assets/the-first-two-weeks-are-for-listening-cCdTD1Yp.js","/assets/the-model-is-the-easy-part-B0HBZsSp.js","/assets/the-unreasonable-effectiveness-of-cleaning-data-DZHaFS2O.js","/assets/the-voice-agent-tradeoff-DZ1ntlt5.js","/assets/toolkit-DTYFstzT.js","/assets/ui-BaX_zA6d.js","/assets/useRailFollowsHeader-yppIIKOJ.js","/assets/utils-BTGVH9Kg.js","/assets/vendor-DzA5IH5n.js","/assets/what-actually-happens-when-you-call-an-llm-api-CYs5eW2i.js","/assets/where-the-human-belongs-in-the-loop-CQ5BIQlC.js","/assets/why-output-tokens-cost-more-BqIjPLdf.js","/assets/writing-down-what-you-didnt-measure-Bn9UrIA3.js"];
+const BUILD_ASSETS = ["/assets/About-BcDk--yZ.js","/assets/ArticleCard-DaY60yG1.js","/assets/ArticleFigure-3WdDhPf_.js","/assets/BackToTop-C_pl7F_N.js","/assets/Blog-DJgJC2Jl.js","/assets/BlogPost-9O_vda9R.js","/assets/Books-1a7jfiG3.js","/assets/Breadcrumbs-DraduA7L.js","/assets/CommandPalette-_l8asu2j.js","/assets/CommandPalette-k2q6n2xy.css","/assets/Gallery-CdmKjDVA.js","/assets/List-DNuE4GUm.js","/assets/NotFound-CZAGl635.js","/assets/Tag-DK7xp6F4.js","/assets/TagPage-Cm-N7dl2.js","/assets/Toolkit-Bi1-8Juw.js","/assets/Toolkit-CMCXQMMw.css","/assets/article-DQYm7CHm.css","/assets/articleFigures-CFnTac2V.js","/assets/basket-Dgm929es.js","/assets/bleu-lies-0a49nBZu.js","/assets/books-BqwqEZlj.js","/assets/branches-CCLY526_.js","/assets/cabinet-BW6aj4Ad.js","/assets/calipers-DgqKgLV5.js","/assets/cards-tZt4dCZc.js","/assets/collectionModel-D6EQYI4a.js","/assets/demos-close-deals-boring-systems-keep-them-BeU9LzqU.js","/assets/dialog-Cr6JGTwN.js","/assets/dish-BK6zD-tA.js","/assets/drawer-DVrs-qBp.js","/assets/elevator-DhoFo6lg.js","/assets/evals-are-the-operating-system-BGhX3x-p.js","/assets/exploded-wnmqP1uj.js","/assets/format-BXiP3Het.js","/assets/four-years-of-saturdays-Ct_y6rhW.js","/assets/fraunces-latin-standard-normal-DihXLNYH.woff2","/assets/golden-cases-come-from-funerals-BRzTCKA8.js","/assets/governor-CffAlCw6.js","/assets/icons-D-GLO1H3.js","/assets/index-DPGwyPfZ.js","/assets/index-ROtOhZvk.css","/assets/index-potPUUcs.js","/assets/keyboard-6C11rSTl.js","/assets/lantern-jjRWsCYT.js","/assets/links-CLU51XNf.js","/assets/loupe-CG8CYJqQ.js","/assets/notebook-Aenb2Zwk.js","/assets/outfit-latin-wght-normal-Bc-8i84L.woff2","/assets/own-your-got-damn-failures-Caj9u57V.js","/assets/phosphor-Cads1jFL.js","/assets/plot-orAKUYR0.js","/assets/plug-Drj4KoiF.js","/assets/points-62W741fA.js","/assets/principles-i-reread-before-starting-anything-new-DuVrjKpl.js","/assets/receipt-D4SkzGuN.js","/assets/relay-22fFrnWX.js","/assets/router-BajukSaI.js","/assets/running-two-model-providers-in-production-Cerm9aTQ.js","/assets/search-for-languages-the-internet-forgot-CRtZ4iFF.js","/assets/settle-Bujd5aWR.js","/assets/sieve-B9w8P2kU.js","/assets/siteSearch-Cc5Prt_m.js","/assets/slow-CtV3rKjZ.js","/assets/specimens-ChCDduAB.js","/assets/stack-D0VEy38L.js","/assets/stop-being-the-thing-inside-the-loop-cWDgi82n.js","/assets/structured-demand-from-chaos-DVPxgQT3.js","/assets/the-bug-was-in-the-transcript-BRZFg5tD.js","/assets/the-first-two-weeks-are-for-listening-BqjVCFkQ.js","/assets/the-model-is-the-easy-part-L-KOkv7F.js","/assets/the-unreasonable-effectiveness-of-cleaning-data-FlpEtFVB.js","/assets/the-voice-agent-tradeoff-DIjPJfw6.js","/assets/toolkit-DTYFstzT.js","/assets/ui-BaX_zA6d.js","/assets/useRailFollowsHeader-yppIIKOJ.js","/assets/utils-BTGVH9Kg.js","/assets/vendor-DzA5IH5n.js","/assets/what-actually-happens-when-you-call-an-llm-api-pOGABVSP.js","/assets/where-the-human-belongs-in-the-loop-Cj0O4s4o.js","/assets/why-output-tokens-cost-more-F9GcipL7.js","/assets/writing-down-what-you-didnt-measure-BUIymkLL.js"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -142,23 +142,35 @@ const staleWhileRevalidate = async (event, cacheName, maxEntries) => {
   return refresh;
 };
 
-const networkFirst = async (request, cacheName, preloadResponsePromise) => {
+// Pages: the network first, so a deploy shows at once, but a page this
+// device has seen before never waits on a weak signal. After
+// NAVIGATION_TIMEOUT_MS the cached copy is served while the network finishes
+// in the background and refreshes the cache for next time. With nothing
+// cached it keeps waiting, then falls back to /offline.html.
+const NAVIGATION_TIMEOUT_MS = 3000;
+const networkFirst = async (event, cacheName) => {
+  const { request } = event;
   const cache = await caches.open(cacheName);
-  try {
-    const response =
-      (await Promise.resolve(preloadResponsePromise)) || (await fetch(request));
+  const network = (async () => {
+    const response = (await Promise.resolve(event.preloadResponse)) || (await fetch(request));
     if (response.ok) {
       await cache.put(request, response.clone());
       trimCache(cacheName, MAX_PAGE_CACHE_ENTRIES);
     }
     return response;
+  })();
+  event.waitUntil(network.catch(() => {}));
+  const cached = () => cache.match(request).then((hit) => hit || caches.match(request));
+  let timer;
+  const slow = new Promise((resolve) => {
+    timer = setTimeout(() => resolve(cached().then((hit) => hit || network)), NAVIGATION_TIMEOUT_MS);
+  });
+  try {
+    return await Promise.race([network, slow]);
   } catch {
-    return (
-      (await cache.match(request)) ||
-      (await caches.match(request)) ||
-      (await caches.match("/offline.html")) ||
-      Response.error()
-    );
+    return (await cached()) || (await caches.match("/offline.html")) || Response.error();
+  } finally {
+    clearTimeout(timer);
   }
 };
 
@@ -196,7 +208,7 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(request.url);
 
   if (request.mode === "navigate") {
-    event.respondWith(networkFirst(request, PAGE_CACHE, event.preloadResponse));
+    event.respondWith(networkFirst(event, PAGE_CACHE));
     return;
   }
 
