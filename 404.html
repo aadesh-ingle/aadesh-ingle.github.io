@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script>(function(){var c=navigator.connection;if(c&&(c.saveData||/(^|-)(2g|3g)$/.test(c.effectiveType||"")))return;["/fonts/charter-regular.woff2","/fonts/charter-bold.woff2"].forEach(function(h){var l=document.createElement("link");l.rel="preload";l.as="font";l.type="font/woff2";l.crossOrigin="anonymous";l.href=h;document.head.appendChild(l)})})();</script>
+    <script>(function(){var c=navigator.connection;if(c&&(c.saveData||/(^|-)(2g|3g)$/.test(c.effectiveType||"")))return;["/assets/fraunces-latin-standard-normal-DihXLNYH.woff2","/assets/outfit-latin-wght-normal-Bc-8i84L.woff2","/fonts/caveat-subset.woff2"].forEach(function(h){var l=document.createElement("link");l.rel="preload";l.as="font";l.type="font/woff2";l.crossOrigin="anonymous";l.href=h;document.head.appendChild(l)})})();</script>
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <!-- Browser chrome matches the paper. The site defaults to light whatever
          the OS says, so the bar starts on light paper; useTheme re-stamps it
          when a reader picks dark (or system on a dark OS). -->
-    <meta name="theme-color" content="#fbfbf9" />
+    <meta name="theme-color" content="#f3f2ed" />
     <!-- managed-head:start — replaced per-route by scripts/prerender.mjs; this default is the home + SPA fallback -->
     <title>Aadesh Ingle</title>
     <meta name="description" content="Aadesh Ingle, founding engineer building production AI systems (agents, RAG, voice, evals). Writing on shipping reliable AI, deep learning, and the craft of engineering." />
@@ -34,10 +34,10 @@
     <meta name="twitter:image:alt" content="Aadesh Ingle" />
     <!-- managed-head:end -->
 
-    <!-- Charter preloads are injected by the font-preload plugin in
-         vite.config.ts, which skips them on Save-Data and 2G/3G connections. -->
-    <link rel="alternate" type="application/atom+xml" title="Aadesh Ingle" href="/feed.xml" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Font preloads (Fraunces, Outfit, and the Caveat subset) are injected
+         by the font-preload plugin in vite.config.ts, which skips them on
+         Save-Data and 2G/3G connections. -->
+    <link rel="alternate" type="application/atom+xml" title="Field Journal" href="/feed.xml" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -46,31 +46,34 @@
          prerendered HTML paints correctly before the main CSS bundle loads. -->
     <style>
       :root {
-        --paper: 60 20% 98%;
-        --ink: 0 0% 9%;
-        --quiet: 60 3% 35%;
-        --rule: 60 7% 86%;
-        --wash: 60 13% 94%;
-        --mark: 228 65% 48%;
-        --background: var(--paper);
-        --foreground: var(--ink);
-        --card: var(--paper);
+        --background: 45 20% 93%;
+        --foreground: 30 16% 11%;
+        --card: 45 20% 90%;
+        --rule: 42 16% 76%;
+        --ink: 30 16% 11%;
+        --brass: 38 28% 36%;
+        --terracotta: 14 62% 43%;
+        --paper: var(--background);
         color-scheme: light;
       }
       .dark {
-        --paper: 60 2% 8%;
-        --ink: 60 10% 90%;
-        --quiet: 60 4% 63%;
-        --rule: 60 3% 18%;
-        --wash: 60 3% 11%;
-        --mark: 229 100% 79%;
+        --background: 40 12% 9%;
+        --foreground: 40 16% 88%;
+        --card: 40 10% 14%;
+        --rule: 36 8% 26%;
+        --ink: 40 16% 88%;
+        --brass: 40 16% 58%;
+        --terracotta: 14 62% 58%;
         color-scheme: dark;
       }
       body {
-        font-family: Charter, 'Charter Fallback', Georgia, serif;
+        font-family: 'Outfit Variable', 'Outfit', system-ui, -apple-system, sans-serif;
         margin: 0;
-        background: hsl(var(--paper));
-        color: hsl(var(--ink));
+        background: hsl(var(--background));
+        color: hsl(var(--foreground));
+      }
+      #root {
+        min-height: 100vh;
       }
     </style>
 
@@ -81,6 +84,10 @@
          'theme-pref' key, then an explicit light/dark under the legacy
          'theme' key, then light. -->
     <script>
+      // The prerendered page is already here: show it at once instead of
+      // fading it in. main.tsx lifts this mark after load, so content that
+      // arrives later (a route change, a modal) still enters with motion.
+      document.documentElement.setAttribute('data-first-paint', '');
       (function () {
         try {
           var pref = localStorage.getItem('theme-pref');
@@ -95,15 +102,20 @@
       })();
     </script>
 
+    <!-- Fonts are self-hosted via @fontsource-variable (bundled in Vite build).
+         No external font requests — zero CDN roundtrips, zero FOUT. -->
+
     <!-- No Speculation Rules: React Router handles every same-site click, so
          a prerendered document is never activated, only built and dropped.
          Route code is prefetched on intent instead (src/lib/routeLoaders.ts). -->
 
-    <script type="module" crossorigin src="/assets/index-DP5nGGsI.js"></script>
+    <script type="module" crossorigin src="/assets/index-B5udSNiW.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/vendor-DzA5IH5n.js">
     <link rel="modulepreload" crossorigin href="/assets/router-BajukSaI.js">
-    <link rel="modulepreload" crossorigin href="/assets/ui-HCUmlAf1.js">
-    <link rel="stylesheet" crossorigin href="/assets/index-CE6vQwEb.css">
+    <link rel="modulepreload" crossorigin href="/assets/utils-BTGVH9Kg.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-D-GLO1H3.js">
+    <link rel="modulepreload" crossorigin href="/assets/ui-BaX_zA6d.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-BzcKT9iD.css">
   </head>
 
   <body>
