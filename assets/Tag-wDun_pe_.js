@@ -1,0 +1,1 @@
+import{j as o}from"./vendor-DzA5IH5n.js";import{L as r}from"./router-BajukSaI.js";import{t as a}from"./index-DP5nGGsI.js";const g=({name:s,className:t=""})=>o.jsx(r,{to:`/tags/${a(s)}/`,className:`link ${t}`,children:s});export{g as T};

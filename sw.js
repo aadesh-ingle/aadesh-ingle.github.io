@@ -23,7 +23,7 @@
  */
 const CACHE_PREFIX = "aadesh-blog";
 // Replaced at build time with a hash of this build's asset list.
-const CACHE_VERSION = "vvdua6c";
+const CACHE_VERSION = "vayi9jj";
 const SHELL_CACHE = `${CACHE_PREFIX}-shell-${CACHE_VERSION}`;
 const ASSET_CACHE = `${CACHE_PREFIX}-assets`;
 const IMAGE_CACHE = `${CACHE_PREFIX}-images`;
@@ -31,31 +31,29 @@ const PAGE_CACHE = `${CACHE_PREFIX}-pages`;
 const MAX_IMAGE_CACHE_ENTRIES = 80;
 const MAX_PAGE_CACHE_ENTRIES = 30;
 
+// The pieces every page uses: the home page, the icons, the two Charter
+// cuts on every page (regular and bold), and the offline page.
 const APP_SHELL_URLS = [
 
   "/",
+  "/favicon.svg",
   "/favicon-32.png",
   "/favicon-16.png",
   "/apple-touch-icon.png",
-  "/profile-160.avif",
-  "/profile-400.avif",
-  "/profile-160.webp",
-  "/profile-400.webp",
-  "/logo-mark-96.webp",
+  "/fonts/charter-regular.woff2",
+  "/fonts/charter-bold.woff2",
   "/offline.html",
   // --- entry assets every page loads (injected by sw-manifest.mjs) ---
-  "/assets/icons-D-GLO1H3.js",
-  "/assets/index-B5udSNiW.js",
-  "/assets/index-BzcKT9iD.css",
+  "/assets/index-CE6vQwEb.css",
+  "/assets/index-DP5nGGsI.js",
   "/assets/router-BajukSaI.js",
-  "/assets/ui-BaX_zA6d.js",
-  "/assets/utils-BTGVH9Kg.js",
+  "/assets/ui-HCUmlAf1.js",
   "/assets/vendor-DzA5IH5n.js",
 ];
 
 // Every hashed file this build ships (injected by sw-manifest.mjs). Used only
 // to prune ASSET_CACHE of files from older builds, never to fetch.
-const BUILD_ASSETS = ["/assets/About-DzoQO5OO.js","/assets/ArticleCard-eMs5gtC6.js","/assets/ArticleFigure-i4tXkAo2.js","/assets/BackToTop-C_pl7F_N.js","/assets/Blog-BShk3lpw.js","/assets/BlogPost-jckAhv7o.js","/assets/Books-GiMFQbeX.js","/assets/Breadcrumbs-WNijO0Fx.js","/assets/CommandPalette-k2q6n2xy.css","/assets/CommandPalette-sJhLjg-E.js","/assets/Gallery-cFJUgECC.js","/assets/List-B72-tXIy.js","/assets/NotFound-D60JRiHE.js","/assets/Tag-BwEXrwWF.js","/assets/TagPage-C0k4ytKN.js","/assets/Toolkit-Bbaogb83.js","/assets/Toolkit-CMCXQMMw.css","/assets/article-DQYm7CHm.css","/assets/articleFigures-CFnTac2V.js","/assets/basket-Dgm929es.js","/assets/bleu-lies-C1RvQlQJ.js","/assets/books-BqwqEZlj.js","/assets/branches-CCLY526_.js","/assets/cabinet-BW6aj4Ad.js","/assets/calipers-DgqKgLV5.js","/assets/cards-tZt4dCZc.js","/assets/collectionModel-D6EQYI4a.js","/assets/demos-close-deals-boring-systems-keep-them-Bh3DNBtT.js","/assets/dialog-Bzu8xppp.js","/assets/dish-BK6zD-tA.js","/assets/drawer-DVrs-qBp.js","/assets/elevator-DhoFo6lg.js","/assets/evals-are-the-operating-system-By33f_1h.js","/assets/exploded-wnmqP1uj.js","/assets/format-BXiP3Het.js","/assets/four-years-of-saturdays-Ct_y6rhW.js","/assets/fraunces-latin-standard-normal-DihXLNYH.woff2","/assets/golden-cases-come-from-funerals-CRpuGOuy.js","/assets/governor-CffAlCw6.js","/assets/icons-D-GLO1H3.js","/assets/index-B5udSNiW.js","/assets/index-BzcKT9iD.css","/assets/index-DPGwyPfZ.js","/assets/keyboard-6C11rSTl.js","/assets/lantern-jjRWsCYT.js","/assets/links-CLU51XNf.js","/assets/loupe-CG8CYJqQ.js","/assets/notebook-Aenb2Zwk.js","/assets/outfit-latin-wght-normal-Bc-8i84L.woff2","/assets/own-your-got-damn-failures-ZcKleVUE.js","/assets/phosphor-Cads1jFL.js","/assets/plot-orAKUYR0.js","/assets/plug-Drj4KoiF.js","/assets/points-62W741fA.js","/assets/principles-i-reread-before-starting-anything-new-2ihk2svw.js","/assets/receipt-D4SkzGuN.js","/assets/relay-22fFrnWX.js","/assets/router-BajukSaI.js","/assets/running-two-model-providers-in-production-DE9I9v7G.js","/assets/search-for-languages-the-internet-forgot-D3Cx4Pn4.js","/assets/settle-Bujd5aWR.js","/assets/sieve-B9w8P2kU.js","/assets/siteSearch-Cc5Prt_m.js","/assets/slow-CtV3rKjZ.js","/assets/specimens-ChCDduAB.js","/assets/stack-D0VEy38L.js","/assets/stop-being-the-thing-inside-the-loop-lWq459Ak.js","/assets/structured-demand-from-chaos-n4e_A3tL.js","/assets/the-bug-was-in-the-transcript-SZcjxkd6.js","/assets/the-first-two-weeks-are-for-listening-C2kj72KY.js","/assets/the-model-is-the-easy-part-CKb7VpRP.js","/assets/the-unreasonable-effectiveness-of-cleaning-data-ykW8wHZj.js","/assets/the-voice-agent-tradeoff-_jIZx-Pm.js","/assets/toolkit-DTYFstzT.js","/assets/ui-BaX_zA6d.js","/assets/useRailFollowsHeader-yppIIKOJ.js","/assets/utils-BTGVH9Kg.js","/assets/vendor-DzA5IH5n.js","/assets/what-actually-happens-when-you-call-an-llm-api-BL1-z7vj.js","/assets/where-the-human-belongs-in-the-loop-3fQuBjKB.js","/assets/why-output-tokens-cost-more-1YCiwKa-.js","/assets/writing-down-what-you-didnt-measure-ChCkQCzu.js"];
+const BUILD_ASSETS = ["/assets/About-DGXBTQPr.js","/assets/ArticleFigure-Cm0Znasi.js","/assets/Blog-B7Szlr6F.js","/assets/BlogPost-CcMA74jF.js","/assets/Books-C-7Cko-J.js","/assets/CommandPalette-BdD_QbAZ.js","/assets/CommandPalette-TK09Zrce.css","/assets/Gallery-DCBQwEVZ.js","/assets/List-CLxmufgG.js","/assets/NotFound-B1PGVW7l.js","/assets/Tag-wDun_pe_.js","/assets/TagPage-Db6JZOCv.js","/assets/Toolkit-CFSY4-MQ.js","/assets/Toolkit-Ys-CzV-j.css","/assets/basket-Dgm929es.js","/assets/bleu-lies-DdfwOIw_.js","/assets/books-yjzhiLJX.js","/assets/branches-CCLY526_.js","/assets/cabinet-BW6aj4Ad.js","/assets/calipers-DgqKgLV5.js","/assets/cards-tZt4dCZc.js","/assets/demos-close-deals-boring-systems-keep-them-DCS0f-Fs.js","/assets/dish-BK6zD-tA.js","/assets/drawer-DVrs-qBp.js","/assets/elevator-DhoFo6lg.js","/assets/evals-are-the-operating-system-uBEh_SKp.js","/assets/exploded-wnmqP1uj.js","/assets/format-BXiP3Het.js","/assets/four-years-of-saturdays-BjoWEpMW.js","/assets/golden-cases-come-from-funerals-Bg0Qrqlb.js","/assets/governor-CffAlCw6.js","/assets/images-CzDquXhx.js","/assets/index-CE6vQwEb.css","/assets/index-DP5nGGsI.js","/assets/index-DPGwyPfZ.js","/assets/keyboard-6C11rSTl.js","/assets/lantern-jjRWsCYT.js","/assets/links-CLU51XNf.js","/assets/loupe-CG8CYJqQ.js","/assets/notebook-Aenb2Zwk.js","/assets/own-your-got-damn-failures-CkQQI6X1.js","/assets/phosphor-Cads1jFL.js","/assets/plot-orAKUYR0.js","/assets/plug-Drj4KoiF.js","/assets/points-62W741fA.js","/assets/principles-i-reread-before-starting-anything-new-BlRkBgK1.js","/assets/receipt-D4SkzGuN.js","/assets/relay-22fFrnWX.js","/assets/router-BajukSaI.js","/assets/running-two-model-providers-in-production-BxC4BYtO.js","/assets/search-for-languages-the-internet-forgot-CQw0QaSt.js","/assets/settle-Bujd5aWR.js","/assets/sieve-B9w8P2kU.js","/assets/siteSearch-Cc5Prt_m.js","/assets/slow-CtV3rKjZ.js","/assets/specimens-ChCDduAB.js","/assets/stack-D0VEy38L.js","/assets/stop-being-the-thing-inside-the-loop-7GgnvplZ.js","/assets/structured-demand-from-chaos-DeJqKDIw.js","/assets/the-bug-was-in-the-transcript-4ndzR4l9.js","/assets/the-first-two-weeks-are-for-listening-DjEPxUCR.js","/assets/the-model-is-the-easy-part-Dnau7qAR.js","/assets/the-unreasonable-effectiveness-of-cleaning-data-BxguHdDg.js","/assets/the-voice-agent-tradeoff-0WuEAKqw.js","/assets/toolkit-DTYFstzT.js","/assets/ui-HCUmlAf1.js","/assets/utils-BJ9rHznG.js","/assets/utils-BTGVH9Kg.js","/assets/vendor-DzA5IH5n.js","/assets/what-actually-happens-when-you-call-an-llm-api-rCM0mrr5.js","/assets/where-the-human-belongs-in-the-loop-YydMVAMB.js","/assets/why-output-tokens-cost-more-Cp7KqD_o.js","/assets/writing-down-what-you-didnt-measure-Eo8PO2M9.js"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(

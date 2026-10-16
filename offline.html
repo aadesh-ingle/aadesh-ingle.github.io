@@ -15,50 +15,42 @@
 })();
 </script>
 <style>
-@font-face{font-family:Fraunces Variable;font-style:normal;font-display:optional;font-weight:100 900;src:url(/assets/fraunces-latin-standard-normal-DihXLNYH.woff2) format("woff2-variations")}@font-face{font-family:Outfit Variable;font-style:normal;font-display:optional;font-weight:100 900;src:url(/assets/outfit-latin-wght-normal-Bc-8i84L.woff2) format("woff2-variations")}@font-face{font-family:Caveat Variable;font-style:normal;font-display:swap;font-weight:500 700;src:url(/fonts/caveat-subset.woff2) format("woff2-variations")}@font-face{font-family:Caveat Fallback;src:local("Arial"),local("Helvetica"),local("Liberation Sans");size-adjust:100.81%;ascent-override:95.22%;descent-override:29.76%;line-gap-override:0%}
-:root{--background:45 20% 93%;--card:45 20% 90%;--ink:30 16% 11%;--brass:38 28% 36%;--terracotta:14 62% 43%;--rule:42 16% 76%;color-scheme:light}
-.dark{--background:40 12% 9%;--card:40 10% 14%;--ink:40 16% 88%;--brass:40 16% 58%;--terracotta:14 62% 58%;--rule:36 8% 26%;color-scheme:dark}
+@font-face{font-family:Charter;font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/charter-regular.woff2) format("woff2")}@font-face{font-family:Charter;font-style:italic;font-weight:400;font-display:swap;src:url(/fonts/charter-italic.woff2) format("woff2")}@font-face{font-family:Charter;font-style:normal;font-weight:700;font-display:swap;src:url(/fonts/charter-bold.woff2) format("woff2")}@font-face{font-family:Charter;font-style:italic;font-weight:700;font-display:swap;src:url(/fonts/charter-bold-italic.woff2) format("woff2")}@font-face{font-family:Charter Fallback;font-weight:400;src:local("Georgia");size-adjust:99.75%;ascent-override:96.54%;descent-override:23.66%;line-gap-override:0%}@font-face{font-family:Charter Fallback;font-weight:700;src:local("Georgia Bold"),local("Georgia-Bold");size-adjust:91.26%;ascent-override:105.52%;descent-override:25.86%;line-gap-override:0%}
+:root{--paper:60 20% 98%;--ink:0 0% 9%;--quiet:60 3% 35%;--rule:60 7% 86%;--mark:228 65% 48%;color-scheme:light}
+.dark{--paper:60 2% 8%;--ink:60 10% 90%;--quiet:60 4% 63%;--rule:60 3% 18%;--mark:229 100% 79%;color-scheme:dark}
 *{box-sizing:border-box;margin:0}
-body{min-height:100svh;display:grid;place-items:center;padding:2rem 1rem;background:hsl(var(--background));color:hsl(var(--ink));font:400 1rem/1.6 'Outfit Variable',system-ui,sans-serif;text-align:center}
-main{width:100%;max-width:22rem}
-.label{font:500 .6875rem/1 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.22em;text-transform:uppercase;color:hsl(var(--brass))}
-.row{display:flex;justify-content:space-between;align-items:baseline;margin-top:1.5rem}
-.frame{position:relative;margin-top:.75rem;background:hsl(var(--card));border:1px solid hsl(var(--rule))}
-.frame i{position:absolute;width:8px;height:8px;border-color:hsl(var(--brass));border-style:solid;border-width:0}
-.frame i:nth-of-type(1){top:-1px;left:-1px;border-top-width:1px;border-left-width:1px}
-.frame i:nth-of-type(2){top:-1px;right:-1px;border-top-width:1px;border-right-width:1px}
-.frame i:nth-of-type(3){bottom:-1px;left:-1px;border-bottom-width:1px;border-left-width:1px}
-.frame i:nth-of-type(4){bottom:-1px;right:-1px;border-bottom-width:1px;border-right-width:1px}
-#offline-figure{aspect-ratio:5/4;--hairline-plate:hsl(var(--card));--hairline-hi:hsl(var(--terracotta));--hairline-edge:hsl(var(--ink));--hairline-mid:hsl(var(--ink)/.55);--hairline-lo:hsl(var(--rule));--hairline-stroke:1.25}
-h1{margin-top:1.5rem;font:700 3.25rem/1.1 'Caveat Variable','Caveat Fallback',cursive}
-p{margin-top:.5rem;color:hsl(var(--ink)/.68)}
-.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 1.5rem;margin-top:2rem}
+body{min-height:100svh;padding:3rem 1.25rem;background:hsl(var(--paper));color:hsl(var(--ink));font:400 1.0625rem/1.55 Charter,'Charter Fallback',Georgia,serif}
+main{width:100%;max-width:26rem;margin:0 auto}
+h1{font-size:2rem;line-height:1.15;font-weight:700}
+p{margin-top:.75rem;color:hsl(var(--quiet))}
+figure{margin-top:2rem}
+#offline-figure{aspect-ratio:5/4;--hairline-plate:hsl(var(--paper));--hairline-hi:hsl(var(--mark));--hairline-edge:hsl(var(--ink));--hairline-mid:hsl(var(--ink)/.55);--hairline-lo:hsl(var(--rule));--hairline-stroke:1.25}
+figcaption{display:flex;justify-content:space-between;margin-top:.5rem;font:.875rem/1.4 -apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;color:hsl(var(--quiet))}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem 1.5rem;margin-top:2rem;font-family:-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif}
 button,a{color:inherit;font:inherit}
-.primary{min-height:44px;padding:0 1.5rem;border:1px solid hsl(var(--ink));background:hsl(var(--ink));color:hsl(var(--background));cursor:pointer}
-.primary:active{transform:scale(.97)}
-.link{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-decoration-color:hsl(var(--terracotta)/.55);text-underline-offset:4px}
-section{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid hsl(var(--rule));text-align:left}
+.primary{min-height:44px;padding:0 1.25rem;border:1px solid hsl(var(--ink));border-radius:4px;background:hsl(var(--ink));color:hsl(var(--paper));cursor:pointer}
+.link{display:inline-flex;align-items:center;min-height:44px;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+section{margin-top:2.5rem;padding-top:1.25rem;border-top:1px solid hsl(var(--rule))}
+.saved-title{font-weight:700;color:hsl(var(--ink))}
 ul{list-style:none;padding:0;margin-top:.5rem}
 li a{display:flex;align-items:center;min-height:44px;border-bottom:1px solid hsl(var(--rule));text-decoration:none}
-:focus-visible{outline:2px solid hsl(var(--terracotta));outline-offset:2px}
-@media (prefers-reduced-motion:reduce){.primary:active{transform:none}}
+:focus-visible{outline:2px solid hsl(var(--mark));outline-offset:2px}
 </style>
 </head>
 <body>
 <main>
-<p class="label">Offline</p>
-<figure>
-<div class="row"><span class="label">No signal</span><span class="label" id="offline-readout" aria-hidden="true"></span></div>
-<div class="frame"><div id="offline-figure"></div><i></i><i></i><i></i><i></i></div>
-</figure>
 <h1>No signal.</h1>
-<p>This page isn't saved on this device yet. Pages you've already read still open.</p>
+<p>This page isn&rsquo;t saved on this device yet. Pages you&rsquo;ve already read still open.</p>
 <div class="actions">
 <button type="button" class="primary" onclick="location.reload()">Try again</button>
 <a class="link" href="/">Go home</a>
 </div>
+<figure>
+<div id="offline-figure"></div>
+<figcaption><span>No signal</span><span id="offline-readout" aria-hidden="true"></span></figcaption>
+</figure>
 <section hidden aria-labelledby="saved-heading">
-<p class="label" id="saved-heading">Saved on this device</p>
+<p class="saved-title" id="saved-heading">Saved on this device</p>
 <ul id="offline-saved"></ul>
 </section>
 </main>
